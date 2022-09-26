@@ -18,8 +18,8 @@ public class Attack : MonoBehaviour
     
     void Update()
     {
-        direction = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        Debug.DrawRay(transform.position, direction, Color.green);
+        direction = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+        Debug.DrawRay(transform.position, direction.normalized * 10f, Color.green);
     }
 
     void Timer()

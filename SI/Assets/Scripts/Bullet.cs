@@ -9,7 +9,7 @@ public class Bullet : MonoBehaviour
 
     void Start()
     {
-        direction = GameObject.FindGameObjectWithTag("Player").GetComponent<Attack>().direction;
+        direction = GameObject.FindGameObjectWithTag("Player").GetComponent<Attack>().direction.normalized;
     }
     void Update()
     {
