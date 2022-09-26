@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class ShootAttack : MonoBehaviour
 {
-   public int timer;
+   public float timer;
    [SerializeField] private float maxTimer;
    public Attack attack;
    [SerializeField] private GameObject bullet;
