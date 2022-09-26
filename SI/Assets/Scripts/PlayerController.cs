@@ -15,6 +15,15 @@ public class PlayerController : MonoBehaviour
     {
         instance = this;
         m_rigidbody = GetComponent<Rigidbody2D>();
+        
+        if (instance != null && instance != this) 
+        { 
+            Destroy(this); 
+        } 
+        else 
+        { 
+            instance = this; 
+        }
     }
 
     public void ResetVelocity()

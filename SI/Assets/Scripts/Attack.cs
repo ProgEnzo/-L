@@ -1,3 +1,4 @@
+using System;
 using System.Threading;
 using UnityEngine;
 
@@ -10,15 +11,30 @@ public class Attack : MonoBehaviour
 
     public ShootAttack shootAttack;
 
+    public static Attack instance;
+
     void Start()
     {
         timer = 0;
         Invoke("Timer", decrementation);
     }
-    
+
+    private void Awake()
+    {
+        if (instance != null && instance != this) 
+        { 
+            Destroy(this); 
+        } 
+        else 
+        { 
+            instance = this; 
+        }
+    }
+
     void Update()
     {
         direction = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+        
         Debug.DrawRay(transform.position, direction.normalized * 10f, Color.green);
     }
 

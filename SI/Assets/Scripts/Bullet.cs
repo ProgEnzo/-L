@@ -13,7 +13,7 @@ public class Bullet : MonoBehaviour
     }
     void Update()
     {
-        rb.velocity = new Vector2(direction.x, direction.y) * speed;
+        rb.velocity =(transform.right * speed);
     }
     
 }
