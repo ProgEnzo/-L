@@ -2,21 +2,21 @@ using UnityEngine;
 
 public class ShootAttack : MonoBehaviour
 {
-   public float timer;
-   [SerializeField] private float maxTimer;
-   public Attack attack;
+   [SerializeField] private float timer;
+   public float maxTimer;
    [SerializeField] private GameObject bullet;
-
    void Update()
    {
-      if (timer == maxTimer)
+      if (timer <= 0)
       {
-         Attack();
-         timer = 0;
+         FireBullet();
+         timer = maxTimer;
       }
+
+      timer -= Time.deltaTime;
    }
 
-   void Attack()
+   void FireBullet()
    {
       Instantiate(bullet, transform.position, Quaternion.identity);
    }
