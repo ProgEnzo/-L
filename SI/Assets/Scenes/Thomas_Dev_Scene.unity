@@ -240,6 +240,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   direction: {x: 0, y: 0, z: 0}
   timer: 0
+  decrementation: 0
   shootAttack: {fileID: 477944091}
 --- !u!212 &477944089
 SpriteRenderer:
@@ -321,7 +322,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timer: 0
-  maxTimer: 1
+  maxTimer: 0.1
   attack: {fileID: 477944088}
   bullet: {fileID: 3710927679586319304, guid: bb210ac6d5dd45a4eb118ecb9bc0fb3b, type: 3}
 --- !u!1 &526015083

@@ -4,14 +4,16 @@ using UnityEngine;
 public class Attack : MonoBehaviour
 {
     public Vector3 direction;
-    [SerializeField] private int timer;
+    [SerializeField] private float timer;
+
+    [SerializeField] private float decrementation;
 
     public ShootAttack shootAttack;
 
     void Start()
     {
         timer = 0;
-        Invoke("Timer", 1f);
+        Invoke("Timer", decrementation);
     }
     
     void Update()
@@ -24,14 +26,14 @@ public class Attack : MonoBehaviour
     {
         if (timer < 60)
         {
-            timer += 1;
-            shootAttack.timer += 1;
+            timer += decrementation;
+            shootAttack.timer += decrementation;
         }
         else
         {
             timer = 0;
-            shootAttack.timer += 1;
+            shootAttack.timer += decrementation;
         }
-        Invoke("Timer", 1f);
+        Invoke("Timer", decrementation);
     }
 }
