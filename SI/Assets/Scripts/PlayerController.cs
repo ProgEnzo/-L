@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class PlayerController : MonoBehaviour
 {
@@ -52,9 +53,14 @@ public class PlayerController : MonoBehaviour
         
         m_timerDash -= Time.deltaTime;
 
-        if (Input.GetKeyDown(KeyCode.A))
+        /*if (Input.GetKeyDown(KeyCode.A))
         {
             IncrementFlammes();
+        }*/
+
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+            TakeDamage();
         }
 
     }
@@ -101,5 +107,12 @@ public class PlayerController : MonoBehaviour
         {
             m_rigidbody.AddForce(Vector2.right*speed);
         }
+    }
+
+    public void TakeDamage()
+    {
+        SO_Controller.currentLife -= Mathf.Min(Random.value, SO_Controller.currentLife / 4f);
+
+        SO_Controller.healthBar.UpdateHealthBar();
     }
 }

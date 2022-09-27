@@ -11,8 +11,11 @@ public class SO_Controller : ScriptableObject
     public float m_durationDash = 0.35f;
     public float dragDeceleration = 12f;
     public float dragMultiplier = 12f;
+    
+    [Header ("flammes")]
 
     [Header("Life")] 
-    public float maxLife = 100f;
-    public float currentLife;
+    public static float maxLife;
+    public static float currentLife;
+    public healthBar healthBar;
 }
