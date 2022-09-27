@@ -17,6 +17,8 @@ public class enemySpawner : MonoBehaviour
     private float randomXposition, randomYposition;
     private Vector3 spawnPosition;
 
+    public int ID;
+
     private void Start()
     {
         InvokeRepeating("SpawnNewEnemy", 0f, 2f);

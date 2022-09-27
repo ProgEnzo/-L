@@ -10,6 +10,8 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] private Rigidbody2D m_rigidbody;
     [SerializeField] private float m_timerDash = 0f;
+
+    public int nombreDeFlammes;
     
     private void Awake()
     {
@@ -50,12 +52,26 @@ public class PlayerController : MonoBehaviour
         
         m_timerDash -= Time.deltaTime;
 
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+            IncrementFlammes();
+        }
+
     }
 
     public void FixedUpdate()
     {
         m_rigidbody.drag = SO_Controller.dragDeceleration * SO_Controller.dragMultiplier;
         ManageMove();
+    }
+
+    public void IncrementFlammes()
+    {
+        nombreDeFlammes++;
+
+        var x = FindObjectOfType<EnnemySpawnerManager>();
+        
+        x.EnablingSpawners();
     }
 
     private void ManageMove()
