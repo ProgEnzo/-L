@@ -9,7 +9,7 @@ public class Weapon2 : MonoBehaviour
 
     [Header("Valeurs")]
     [SerializeField] private float[] cooldowns = new float[]{ };
-    public float[] damages = new float[] { };
+    [SerializeField] float[] damages = new float[] { };
 
     private float timer;
     [SerializeField] private GameObject bullet2;
@@ -27,7 +27,8 @@ public class Weapon2 : MonoBehaviour
 
     void Shoot()
     {
-        float angle = Mathf.Atan2(DirectionShoot.instance.direction.y - PlayerController.instance.transform.position.y, DirectionShoot.instance.direction.x - PlayerController.instance.transform.position.x) * Mathf.Rad2Deg;
+        float angle = Mathf.Atan2(DirectionShoot.instance.direction.y - PlayerController.instance.transform.position.y, 
+            DirectionShoot.instance.direction.x - PlayerController.instance.transform.position.x) * Mathf.Rad2Deg;
         GameObject bullet = Instantiate(bullet2, transform.position, Quaternion.AngleAxis(angle, Vector3.forward));
         bullet.GetComponent<Bullet>().damages = damages[tierDamages];
 

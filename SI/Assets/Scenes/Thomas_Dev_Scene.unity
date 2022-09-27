@@ -248,14 +248,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 999365377, guid: d37895b9048c7314d8e5a0be24c58e5a, type: 3}
-      propertyPath: m_Name
-      value: Weapon1 (Pistol)
-      objectReference: {fileID: 0}
-    - target: {fileID: 999365377, guid: d37895b9048c7314d8e5a0be24c58e5a, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2871587935976452069, guid: d37895b9048c7314d8e5a0be24c58e5a, type: 3}
       propertyPath: m_Name
       value: Player
@@ -304,41 +296,5 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3537920113985833658, guid: d37895b9048c7314d8e5a0be24c58e5a, type: 3}
-      propertyPath: m_Name
-      value: Weapon2 (Shotgun)
-      objectReference: {fileID: 0}
-    - target: {fileID: 3537920113985833658, guid: d37895b9048c7314d8e5a0be24c58e5a, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d37895b9048c7314d8e5a0be24c58e5a, type: 3}
---- !u!1 &1503847002 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3537920113985833658, guid: d37895b9048c7314d8e5a0be24c58e5a, type: 3}
-  m_PrefabInstance: {fileID: 440251017}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1503847004
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1503847002}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 26a9ec3dad6b6e149ab4fa8bd79883c9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tierCooldowns: 0
-  tierDamages: 0
-  cooldowns:
-  - 2
-  - 1
-  - 0.5
-  damages:
-  - 5
-  - 10
-  - 20
-  bullet2: {fileID: 3710927679586319304, guid: bb210ac6d5dd45a4eb118ecb9bc0fb3b, type: 3}
