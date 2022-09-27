@@ -248,6 +248,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 999365377, guid: d37895b9048c7314d8e5a0be24c58e5a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 529660742857703810, guid: d37895b9048c7314d8e5a0be24c58e5a, type: 3}
+      propertyPath: m_Name
+      value: Weapon4 (Strikes)
+      objectReference: {fileID: 0}
+    - target: {fileID: 529660742857703810, guid: d37895b9048c7314d8e5a0be24c58e5a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1838199565014597971, guid: d37895b9048c7314d8e5a0be24c58e5a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2871587935976452069, guid: d37895b9048c7314d8e5a0be24c58e5a, type: 3}
       propertyPath: m_Name
       value: Player
@@ -296,5 +312,42 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3537920113985833658, guid: d37895b9048c7314d8e5a0be24c58e5a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d37895b9048c7314d8e5a0be24c58e5a, type: 3}
+--- !u!1 &468660299 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 529660742857703810, guid: d37895b9048c7314d8e5a0be24c58e5a, type: 3}
+  m_PrefabInstance: {fileID: 440251017}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &468660301
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 468660299}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e570ea6d4011b645a0662e43073bfb5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tierCooldowns: 0
+  tierDamages: 0
+  tierNumber: 0
+  cooldowns:
+  - 5
+  - 3
+  - 1
+  damages:
+  - 0
+  - 0
+  - 0
+  numbers:
+  - 2
+  - 4
+  - 6
+  explosionZone: {fileID: 7595261457778335820, guid: 24aef5e516feed145b5a8c65d3820e83, type: 3}
