@@ -33,7 +33,7 @@ public class ShootAttack : MonoBehaviour
 
    void Attack()
    { 
-      Vector2 mousePos =Camera.main.ScreenToWorldPoint(Input.mousePosition);
+      Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
       float angle = Mathf.Atan2(mousePos.y - PlayerController.instance.transform.position.y, mousePos.x - PlayerController.instance.transform.position.x) * Mathf.Rad2Deg;
       Instantiate(bullet, transform.position, Quaternion.AngleAxis(angle, Vector3.forward));
    }
