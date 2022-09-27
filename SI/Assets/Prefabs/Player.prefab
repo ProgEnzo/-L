@@ -11,12 +11,12 @@ GameObject:
   - component: {fileID: 999365378}
   - component: {fileID: 999365379}
   m_Layer: 0
-  m_Name: Weapon1
+  m_Name: Weapon1 (Pistol)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &999365378
 Transform:
   m_ObjectHideFlags: 0
@@ -228,6 +228,7 @@ MonoBehaviour:
   SO_Controller: {fileID: 11400000, guid: 57887bb21faa6d942a17a52512eeaa86, type: 2}
   m_rigidbody: {fileID: 2871587935976452066}
   m_timerDash: 0
+  nombreDeFlammes: 0
 --- !u!50 &2871587935976452066
 Rigidbody2D:
   serializedVersion: 4
@@ -497,8 +498,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4384657160506695326}
+  - component: {fileID: 1503847004}
   m_Layer: 0
-  m_Name: Weapon2
+  m_Name: Weapon2 (Shotgun)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -519,6 +521,29 @@ Transform:
   m_Father: {fileID: 2871587935976452071}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1503847004
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3537920113985833658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26a9ec3dad6b6e149ab4fa8bd79883c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tierCooldowns: 0
+  tierDamages: 0
+  cooldowns:
+  - 2
+  - 1
+  - 0.5
+  damages:
+  - 5
+  - 10
+  - 20
+  bullet2: {fileID: 3710927679586319304, guid: bb210ac6d5dd45a4eb118ecb9bc0fb3b, type: 3}
 --- !u!1 &6376474460800327648
 GameObject:
   m_ObjectHideFlags: 0

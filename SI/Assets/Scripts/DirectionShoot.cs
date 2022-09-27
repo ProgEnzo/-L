@@ -18,7 +18,13 @@ public class DirectionShoot : MonoBehaviour
     }
     void Update()
     {
-        direction = (Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position).normalized;
-        Debug.DrawLine(transform.position, direction * 100f, Color.green);
+        //direction = (Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position);
+        //Debug.Log("mouse:" + Camera.main.ScreenToWorldPoint(Input.mousePosition).normalized);
+
+        var a = Input.mousePosition.x - transform.position.x;
+        var b = Input.mousePosition.y - transform.position.y;
+        direction = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+        //Debug.Log("direction:" + direction);
+        Debug.DrawLine(transform.position, Camera.main.ScreenToWorldPoint(Input.mousePosition), Color.green);
     }
 }

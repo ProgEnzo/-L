@@ -1,5 +1,7 @@
 using System;
+using System.Diagnostics;
 using UnityEngine;
+using Debug = UnityEngine.Debug;
 
 public class Weapon2 : MonoBehaviour
 {
@@ -10,9 +12,18 @@ public class Weapon2 : MonoBehaviour
     [Header("Valeurs")]
     [SerializeField] private float[] cooldowns = new float[]{ };
     public float[] damages = new float[] { };
+    public float[] angles = new float[] { };
+    public float[] bullets = new float[] { };
 
     private float timer;
     [SerializeField] private GameObject bullet2;
+
+    private DirectionShoot _directionShoot;
+
+    private void Start()
+    {
+        _directionShoot = GetComponentInParent<DirectionShoot>();
+    }
 
     void Update()
     {
@@ -27,7 +38,22 @@ public class Weapon2 : MonoBehaviour
 
     void Shoot()
     {
-        float angle = Mathf.Atan2(DirectionShoot.instance.direction.y - PlayerController.instance.transform.position.y, DirectionShoot.instance.direction.x - PlayerController.instance.transform.position.x) * Mathf.Rad2Deg;
+        float trancheAngle = angles[0]/bullets[0];  //>> 15 pour le moment
+        float halfAngle = angles[0] / 2;
+       
+         for (int i=0; i<bullets[0]; i++)
+        {
+         
+            Vector2 startDirection = new Vector2(Mathf.Sin(Mathf.Deg2Rad * halfAngle), Mathf.Cos(Mathf.Deg2Rad * halfAngle));
+            Debug.Log("angle" + startDirection);
+            GameObject bullet = Instantiate(bullet2, transform.position, Quaternion.AngleAxis(0, Vector3.forward));
+            bullet.GetComponent<Bullet>().damages = damages[tierDamages];
+            bullet.GetComponent<Bullet>().direction = _directionShoot.direction.normalized+(Vector2)(Quaternion.AngleAxis((halfAngle*(i+1)), Vector3.forward)*Vector3.right);
+
+        }
+        
+        
+        /*float angle = Mathf.Atan2(DirectionShoot.instance.direction.y - PlayerController.instance.transform.position.y, DirectionShoot.instance.direction.x - PlayerController.instance.transform.position.x) * Mathf.Rad2Deg;
         GameObject bullet = Instantiate(bullet2, transform.position, Quaternion.AngleAxis(angle, Vector3.forward));
         bullet.GetComponent<Bullet>().damages = damages[tierDamages];
 
@@ -41,6 +67,6 @@ public class Weapon2 : MonoBehaviour
         leftLeftBullet.GetComponent<Bullet>().damages = damages[tierDamages];
 
         GameObject rightRightBullet = Instantiate(bullet2, transform.position, Quaternion.AngleAxis(angle - 60f, Vector3.forward));
-        rightRightBullet.GetComponent<Bullet>().damages = damages[tierDamages];
+        rightRightBullet.GetComponent<Bullet>().damages = damages[tierDamages];*/
     }
 }
