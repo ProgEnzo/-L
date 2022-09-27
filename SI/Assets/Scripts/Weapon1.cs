@@ -27,6 +27,7 @@ public class Weapon1 : MonoBehaviour
     void Shoot()
     {
         float angle = Mathf.Atan2(DirectionShoot.instance.direction.y - PlayerController.instance.transform.position.y, DirectionShoot.instance.direction.x - PlayerController.instance.transform.position.x) * Mathf.Rad2Deg;
-        Instantiate(bullet1, transform.position, Quaternion.AngleAxis(angle, Vector3.forward), gameObject.transform);
+        GameObject bullet = Instantiate(bullet1, transform.position, Quaternion.AngleAxis(angle, Vector3.forward));
+        bullet.GetComponent<Bullet>().damages = damages[tierDamages];
     }
 }

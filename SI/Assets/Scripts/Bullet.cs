@@ -7,12 +7,8 @@ public class Bullet : MonoBehaviour
     private Vector2 direction;
     public float damages;
 
-    public Weapon1 weapon;
-
     void Start()
     {
-        weapon = GetComponentInParent<Weapon1>();
-        damages = weapon.damages[weapon.tierDamages];
         direction = DirectionShoot.instance.direction.normalized;
         rb = GetComponent<Rigidbody2D>();
         Debug.Log(damages);
