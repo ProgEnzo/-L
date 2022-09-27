@@ -2,18 +2,29 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    public Attack attack;
-    [SerializeField] private Vector3 direction;
-    [SerializeField] private Rigidbody2D rb;
+    private Rigidbody2D rb;
     [SerializeField] private float speed;
+    private Vector2 direction;
+    public float damages;
+
+    public Weapon1 weapon;
 
     void Start()
     {
-        direction = GameObject.FindGameObjectWithTag("Player").GetComponent<Attack>().direction.normalized;
+        weapon = GetComponentInParent<Weapon1>();
+        damages = weapon.damages[weapon.tierDamages];
+        direction = DirectionShoot.instance.direction.normalized;
+        rb = GetComponent<Rigidbody2D>();
+        Debug.Log(damages);
     }
+
     void Update()
     {
-        rb.velocity =(transform.right * speed);
+        rb.velocity = direction * speed;
     }
-    
+
+    private void OnBecameInvisible()
+    {
+        Destroy(gameObject);
+    }
 }
