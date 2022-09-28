@@ -6,21 +6,18 @@ public class Bullet : MonoBehaviour
     [SerializeField] private float speed;
     public Vector2 direction;
     public float damages;
-    void Start()
+    protected void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        Debug.Log(damages);
+        
     }
-
     void Update()
     {
         rb.velocity = direction * speed;
     }
-
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("0");
-        if (collision.gameObject.CompareTag("Enemy"))
+        if (other.gameObject.CompareTag("Enemy"))
         {
             //Damages
             Destroy(gameObject);

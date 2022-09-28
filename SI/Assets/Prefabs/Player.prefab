@@ -1,5 +1,132 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1010960279
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1010960280}
+  - component: {fileID: 1010960281}
+  m_Layer: 7
+  m_Name: AOE
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1010960280
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1010960279}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2871587935976452071}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1010960281
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1010960279}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d3cf850fbb0311429abf8f8f0b4de07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tierCooldowns: 0
+  tierDamages: 0
+  tierAngles: 0
+  cooldowns:
+  - 4
+  - 3
+  - 2
+  damages:
+  - 10
+  - 12
+  - 15
+  angles:
+  - 0
+  - 0
+  - 0
+  bullet: {fileID: 0}
+  dangerZone: {fileID: 3849128226693560661, guid: ec24994bbdcab7f4da6e756db101404d, type: 3}
+--- !u!1 &1106439685
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1106439686}
+  - component: {fileID: 1106439687}
+  m_Layer: 7
+  m_Name: Meteors
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1106439686
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1106439685}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2871587935976452071}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1106439687
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1106439685}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f7444e21cb01bb4d96a70f117094c83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tierCooldowns: 0
+  tierDamages: 0
+  tierAngles: 0
+  cooldowns:
+  - 4
+  - 3
+  - 2
+  damages:
+  - 0
+  - 0
+  - 0
+  angles:
+  - 0
+  - 0
+  - 0
+  bullet: {fileID: 0}
+  tierNumber: 0
+  numbers:
+  - 2
+  - 4
+  - 6
+  explosionZone: {fileID: 2450786148325854375, guid: fa2f43d18b74475469b31186b24197c1, type: 3}
 --- !u!1 &1402327409
 GameObject:
   m_ObjectHideFlags: 0
@@ -178,11 +305,11 @@ MonoBehaviour:
   - 25
   - 50
   angles:
-  - 15
-  - 18
-  - 25.714285
-  bullet: {fileID: 3710927679586319304, guid: bb210ac6d5dd45a4eb118ecb9bc0fb3b, type: 3}
-  numberOfBullets: 030000000500000007000000
+  - 0
+  - 0
+  - 0
+  bullet: {fileID: 9157416093166867173, guid: e420ce0e2175f50489d2192af1af0eb6, type: 3}
+  numberOfBullets: 010000000300000005000000
 --- !u!1 &2871587935976452069
 GameObject:
   m_ObjectHideFlags: 0
@@ -221,6 +348,8 @@ Transform:
   - {fileID: 1481238171}
   - {fileID: 1402327410}
   - {fileID: 8451589731860092447}
+  - {fileID: 1010960280}
+  - {fileID: 1106439686}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

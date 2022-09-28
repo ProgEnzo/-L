@@ -1,15 +1,28 @@
 using UnityEngine;
 
-public class ExplosiveBullet : Bullet
+public class ExplosiveBullet : MonoBehaviour
 {
-    [SerializeField] private GameObject explosionZone;
-
-    private void OnCollisionEnter2D(Collision2D collision)
+    private Rigidbody2D rb;
+    [SerializeField] private float speed;
+    public Vector2 direction;
+    public float damages;
+    public GameObject explosionZone;
+    protected void Start()
     {
-        if (collision.gameObject.CompareTag("Enemy"))
+        rb = GetComponent<Rigidbody2D>();
+        
+    }
+    void Update()
+    {
+        rb.velocity = direction * speed;
+    }
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Enemy"))
         {
             GameObject zone = Instantiate(explosionZone, transform.position, Quaternion.identity);
-            Destroy(zone, 1f);
+            zone.GetComponent<ExplosionZone>().damages = damages;
+            Destroy(zone, 0.3f);
             Destroy(gameObject);
         }
     }
