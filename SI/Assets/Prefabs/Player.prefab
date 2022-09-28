@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1010960280}
   - component: {fileID: 1010960281}
-  - component: {fileID: 1010960282}
   m_Layer: 7
   m_Name: AOE
   m_TagString: Untagged
@@ -47,6 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tierCooldowns: 0
   tierAngles: 0
+  tierDamages: 0
   cooldowns:
   - 4
   - 3
@@ -55,25 +55,12 @@ MonoBehaviour:
   - 0
   - 0
   - 0
+  damages:
+  - 0
+  - 0
+  - 0
   bullet: {fileID: 0}
   dangerZone: {fileID: 3849128226693560661, guid: ec24994bbdcab7f4da6e756db101404d, type: 3}
---- !u!114 &1010960282
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1010960279}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e3e8c3c39061be0408ce955b67d15319, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tierDamages: 0
-  damages:
-  - 100
-  - 120
-  - 150
 --- !u!1 &1106439685
 GameObject:
   m_ObjectHideFlags: 0
@@ -121,11 +108,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tierCooldowns: 0
   tierAngles: 0
+  tierDamages: 0
   cooldowns:
   - 4
   - 3
   - 2
   angles:
+  - 0
+  - 0
+  - 0
+  damages:
   - 0
   - 0
   - 0
@@ -148,11 +140,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3e8c3c39061be0408ce955b67d15319, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tierDamages: 0
-  damages:
-  - 100
-  - 120
-  - 200
+  damages: 0
 --- !u!1 &1402327409
 GameObject:
   m_ObjectHideFlags: 0
@@ -163,7 +151,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1402327410}
   - component: {fileID: 1402327411}
-  - component: {fileID: 595460267}
   m_Layer: 7
   m_Name: Shot-Fucking-Gun
   m_TagString: Untagged
@@ -200,6 +187,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tierCooldowns: 0
   tierAngles: 0
+  tierDamages: 0
   cooldowns:
   - 4
   - 2
@@ -208,25 +196,12 @@ MonoBehaviour:
   - 15
   - 18
   - 25.714285
+  damages:
+  - 0
+  - 0
+  - 0
   bullet: {fileID: 3710927679586319304, guid: bb210ac6d5dd45a4eb118ecb9bc0fb3b, type: 3}
   numberOfBullets: 030000000500000007000000
---- !u!114 &595460267
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1402327409}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e3e8c3c39061be0408ce955b67d15319, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tierDamages: 0
-  damages:
-  - 100
-  - 150
-  - 200
 --- !u!1 &1481238170
 GameObject:
   m_ObjectHideFlags: 0
@@ -237,7 +212,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1481238171}
   - component: {fileID: 1481238172}
-  - component: {fileID: 611286313}
   m_Layer: 7
   m_Name: Mitraillette
   m_TagString: Untagged
@@ -274,6 +248,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tierCooldowns: 0
   tierAngles: 0
+  tierDamages: 0
   cooldowns:
   - 1
   - 0.5
@@ -282,25 +257,12 @@ MonoBehaviour:
   - 0
   - 0
   - 0
-  bullet: {fileID: 3710927679586319304, guid: bb210ac6d5dd45a4eb118ecb9bc0fb3b, type: 3}
-  numberOfBullets: 010000000300000007000000
---- !u!114 &611286313
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1481238170}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e3e8c3c39061be0408ce955b67d15319, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tierDamages: 0
   damages:
   - 0
   - 0
   - 0
+  bullet: {fileID: 3710927679586319304, guid: bb210ac6d5dd45a4eb118ecb9bc0fb3b, type: 3}
+  numberOfBullets: 010000000300000007000000
 --- !u!1 &774093269675666337
 GameObject:
   m_ObjectHideFlags: 0
@@ -311,7 +273,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8451589731860092447}
   - component: {fileID: 5878412541255089279}
-  - component: {fileID: 1790904133}
   m_Layer: 7
   m_Name: MissileLauncher
   m_TagString: Untagged
@@ -348,6 +309,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tierCooldowns: 0
   tierAngles: 0
+  tierDamages: 0
   cooldowns:
   - 4
   - 2
@@ -356,25 +318,12 @@ MonoBehaviour:
   - 0
   - 0
   - 0
+  damages:
+  - 0
+  - 0
+  - 0
   bullet: {fileID: 9157416093166867173, guid: e420ce0e2175f50489d2192af1af0eb6, type: 3}
   numberOfBullets: 010000000300000005000000
---- !u!114 &1790904133
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 774093269675666337}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e3e8c3c39061be0408ce955b67d15319, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tierDamages: 0
-  damages:
-  - 100
-  - 120
-  - 200
 --- !u!1 &2871587935976452069
 GameObject:
   m_ObjectHideFlags: 0

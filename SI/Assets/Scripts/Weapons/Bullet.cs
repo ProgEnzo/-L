@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class Bullet : MonoBehaviour
@@ -5,7 +6,6 @@ public class Bullet : MonoBehaviour
     private Rigidbody2D rb;
     [SerializeField] private float speed;
     public Vector2 direction;
-    public float damages;
     protected void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -15,13 +15,14 @@ public class Bullet : MonoBehaviour
     {
         rb.velocity = direction * speed;
     }
-    private void OnTriggerEnter2D(Collider2D other)
+
+    private void OnTriggerEnter2D(Collider2D col)
     {
-        if (other.gameObject.CompareTag("Enemy"))
-        {
-            //Damages
+        if (col.CompareTag("Enemy") || col.CompareTag("Wall"))
+        { 
             Destroy(gameObject);
         }
+        
     }
 
     private void OnBecameInvisible()

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 423969091266558151}
   - component: {fileID: -6313320846774558946}
   - component: {fileID: 2878350521238547605}
+  - component: {fileID: 6463913967128268294}
   - component: {fileID: -8557847879811680029}
   m_Layer: 6
   m_Name: ExplosiveBullet
@@ -134,6 +135,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &6463913967128268294
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9157416093166867173}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4ab968f4b3b64745a039094f71d0e77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 10
+  direction: {x: 0, y: 0}
 --- !u!114 &-8557847879811680029
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -146,7 +161,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25b896af505578b42b8f65740ecdcf58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
-  direction: {x: 0, y: 0}
-  damages: 0
+  tempDamage: 0
   explosionZone: {fileID: 2450786148325854375, guid: fa2f43d18b74475469b31186b24197c1, type: 3}

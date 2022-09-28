@@ -7,7 +7,7 @@ public class AOE : Weapon
     protected override void Shoot()
     {
         GameObject zone = Instantiate(dangerZone, transform.position, Quaternion.identity);
-        zone.GetComponent<AOEZone>().damages = damager.damages[damager.tierDamages];
+        zone.GetComponent<Damager>().damages = damages[tierDamages];
         Destroy(zone, 0.4f);
     }
 }

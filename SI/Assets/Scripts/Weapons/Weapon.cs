@@ -6,10 +6,12 @@ public class Weapon : MonoBehaviour
     [Header("Tiers")]
     public int tierCooldowns;
     public int tierAngles;
+    public int tierDamages;
 
     [Header("Valeurs")]
     [SerializeField] protected float[] cooldowns;
     [SerializeField] protected float[] angles;
+    [SerializeField] protected float[] damages;
 
     private float timer = 1f;
     [SerializeField] protected GameObject bullet;
