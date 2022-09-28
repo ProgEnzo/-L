@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ProjectilesWeapon : Weapon
@@ -9,15 +6,15 @@ public class ProjectilesWeapon : Weapon
    protected int[] numberOfBullets;
    protected override void Shoot()
    {
-      Vector2 direction = _directionShoot.direction.normalized/*+(Vector2)(Quaternion.AngleAxis((halfAngle), Vector3.forward)*Vector3.right)*/;
+      Vector2 direction = _directionShoot.direction.normalized;
       
       GameObject _bullet = Instantiate(bullet, transform.position, Quaternion.AngleAxis(0, Vector3.forward));
       _bullet.GetComponent<Bullet>().damages = damages[tierDamages];
       _bullet.GetComponent<Bullet>().direction = direction;
 
-      if (numberOfBullets [tierDamages] > 1)
+      if (numberOfBullets [tierAngles] > 1)
       {
-         for (int i = 1; i <= numberOfBullets[tierDamages] / 2; i++)
+         for (int i = 1; i <= numberOfBullets[tierAngles] / 2; i++)
          {
             _bullet = Instantiate(bullet, transform.position, Quaternion.AngleAxis(0, Vector3.forward));
             _bullet.GetComponent<Bullet>().damages = damages[tierDamages];
