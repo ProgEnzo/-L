@@ -17,7 +17,11 @@ public class Flag : MonoBehaviour
    {
       if (other.CompareTag("Player"))
       {
+         PlayerController.instance.flag = gameObject;
          takeFlag = true;
+         other.GetComponent<PlayerController>().GetFlag();
+
+         transform.parent = PlayerController.instance.gameObject.transform;
       }
    }
 }

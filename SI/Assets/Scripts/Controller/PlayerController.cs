@@ -21,6 +21,8 @@ public class PlayerController : MonoBehaviour
     [Header("Flags")] 
     public List<GameObject> Flammes;
 
+    public GameObject flag;
+
     #endregion
     
     private void Awake()
@@ -47,6 +49,7 @@ public class PlayerController : MonoBehaviour
     {
         ReInit();
         SO_Controller.currentLife = 100f;
+        SO_Controller.tiers = 0;
         SO_Controller.GetFlag = false;
     }
     
@@ -134,11 +137,15 @@ public class PlayerController : MonoBehaviour
         {
             SO_Controller.tiers += 1;
             FindObjectOfType<FlagsSpawnerManager>().SpawnFlag();
+            SO_Controller.GetFlag = false;
+            
+            if(flag)
+                Destroy(flag);
         }
     }
 
     public void GetFlag()
     {
-        
+        SO_Controller.GetFlag = true;
     }
 }
