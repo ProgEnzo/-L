@@ -51,6 +51,7 @@ public class PlayerController : MonoBehaviour
         SO_Controller.currentLife = 100f;
         SO_Controller.tiers = 0;
         SO_Controller.GetFlag = false;
+        SO_Controller.nombreDeFlammes = 0;
     }
     
     public void ReInit()

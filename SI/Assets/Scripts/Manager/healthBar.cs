@@ -14,7 +14,7 @@ public class healthBar : MonoBehaviour
     
     public void UpdateHealthBar()
     {
-        float duration = 0.75f * (player.currentLife / player.maxLife);
+        float duration = 0.15f * (player.currentLife / player.maxLife);
         HealthBarImage.DOFillAmount(player.currentLife / player.maxLife, duration);
 
         Color newColor = Color.green;
