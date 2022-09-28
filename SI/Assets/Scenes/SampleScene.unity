@@ -829,7 +829,7 @@ Transform:
   - {fileID: 693517442}
   - {fileID: 1757258757}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &388360167
 GameObject:
@@ -1849,7 +1849,7 @@ Transform:
   - {fileID: 519420032}
   - {fileID: 1695248097}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &895711283
 GameObject:
@@ -2234,7 +2234,7 @@ Transform:
   - {fileID: 619394802}
   - {fileID: 131196886}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1115195663
 GameObject:
@@ -2585,7 +2585,7 @@ Transform:
   - {fileID: 311293783}
   - {fileID: 626903755}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1507991358
 GameObject:
@@ -2681,7 +2681,7 @@ RectTransform:
   m_Children:
   - {fileID: 677356346}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -2797,7 +2797,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1530794291 stripped
 Transform:
@@ -2865,7 +2865,7 @@ Transform:
   m_Children:
   - {fileID: 1115195664}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1637765395
 GameObject:
@@ -3443,7 +3443,7 @@ Transform:
   m_Children:
   - {fileID: 193009701}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1925106436
 PrefabInstance:
@@ -4030,11 +4030,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1106439687, guid: d37895b9048c7314d8e5a0be24c58e5a, type: 3}
       propertyPath: tierNumber
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1106439687, guid: d37895b9048c7314d8e5a0be24c58e5a, type: 3}
       propertyPath: tierCooldowns
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1402327409, guid: d37895b9048c7314d8e5a0be24c58e5a, type: 3}
       propertyPath: m_IsActive
