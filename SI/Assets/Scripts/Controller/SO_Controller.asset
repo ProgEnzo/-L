@@ -17,3 +17,5 @@ MonoBehaviour:
   m_durationDash: 0.35
   dragDeceleration: 10
   dragMultiplier: 10
+  maxLife: 100
+  currentLife: 0.0010528621

@@ -15,7 +15,6 @@ public class SO_Controller : ScriptableObject
     [Header ("flammes")]
 
     [Header("Life")] 
-    public static float maxLife;
-    public static float currentLife;
-    public healthBar healthBar;
+    public float maxLife;
+    public float currentLife;
 }

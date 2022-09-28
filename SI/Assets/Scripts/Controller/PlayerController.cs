@@ -13,7 +13,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float m_timerDash = 0f;
 
     public int nombreDeFlammes;
-    
+    public healthBar healthBar;
+
     private void Awake()
     {
         instance = this;
@@ -37,6 +38,8 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         ReInit();
+
+        SO_Controller.currentLife = 100f;
     }
     
     public void ReInit()
@@ -58,9 +61,11 @@ public class PlayerController : MonoBehaviour
             IncrementFlammes();
         }*/
 
-        if (Input.GetKeyDown(KeyCode.A))
+        if (Input.GetKey(KeyCode.E))
         {
             TakeDamage();
+            
+            Debug.Log("le joueur prend des dégats");
         }
 
     }
@@ -109,10 +114,9 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void TakeDamage()
+    private void TakeDamage()
     {
         SO_Controller.currentLife -= Mathf.Min(Random.value, SO_Controller.currentLife / 4f);
-
-        SO_Controller.healthBar.UpdateHealthBar();
+        healthBar.UpdateHealthBar();
     }
 }
