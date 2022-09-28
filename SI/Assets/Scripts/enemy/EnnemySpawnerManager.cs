@@ -28,7 +28,7 @@ public class EnnemySpawnerManager : MonoBehaviour
 
     public void EnablingSpawners()
     {
-        for (int i = 0; i < nbrFlammesPallier[PlayerController.instance.nombreDeFlammes]; i++)
+        for (int i = 0; i < nbrFlammesPallier[SO_Controller.nombreDeFlammes]; i++)
         {
             foreach (enemySpawner x in spawners)
             {
