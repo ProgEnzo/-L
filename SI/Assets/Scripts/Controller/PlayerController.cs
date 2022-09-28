@@ -11,9 +11,12 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] private Rigidbody2D m_rigidbody;
     [SerializeField] private float m_timerDash = 0f;
-
-    public int nombreDeFlammes;
+    
+    [Header("Life")]
     public healthBar healthBar;
+
+    [Header("Flags")] 
+    public List<GameObject> Flammes;
 
     private void Awake()
     {
@@ -56,10 +59,10 @@ public class PlayerController : MonoBehaviour
         
         m_timerDash -= Time.deltaTime;
 
-        /*if (Input.GetKeyDown(KeyCode.A))
+        if (Input.GetKeyDown(KeyCode.A))
         {
             IncrementFlammes();
-        }*/
+        }
 
         if (Input.GetKey(KeyCode.E))
         {
@@ -78,7 +81,7 @@ public class PlayerController : MonoBehaviour
 
     public void IncrementFlammes()
     {
-        nombreDeFlammes++;
+        SO_Controller.nombreDeFlammes++;
 
         var x = FindObjectOfType<EnnemySpawnerManager>();
         
