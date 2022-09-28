@@ -3,13 +3,11 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     private Rigidbody2D rb;
-    [SerializeField] private float speed = 5;
+    [SerializeField] private float speed;
     public Vector2 direction;
     public float damages;
-
     void Start()
     {
-        if(direction == null) direction = new Vector2(0,0);
         rb = GetComponent<Rigidbody2D>();
         Debug.Log(damages);
     }
@@ -17,6 +15,16 @@ public class Bullet : MonoBehaviour
     void Update()
     {
         rb.velocity = direction * speed;
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        Debug.Log("0");
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            //Damages
+            Destroy(gameObject);
+        }
     }
 
     private void OnBecameInvisible()

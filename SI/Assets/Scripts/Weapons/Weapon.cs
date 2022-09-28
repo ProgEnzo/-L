@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Weapon : MonoBehaviour
@@ -8,13 +6,14 @@ public class Weapon : MonoBehaviour
     [Header("Tiers")]
     public int tierCooldowns;
     public int tierDamages;
+    public int tierAngles;
 
     [Header("Valeurs")]
-    [SerializeField] private float[] cooldowns = new float[]{ };
-    public float[] damages = new float[] { };
-    public float[] angles = new float[] { };
+    [SerializeField] protected float[] cooldowns;
+    [SerializeField] protected float[] damages;
+    [SerializeField] protected float[] angles;
 
-    private float timer;
+    private float timer = 1f;
     [SerializeField] protected GameObject bullet;
 
     protected DirectionShoot _directionShoot;
@@ -34,8 +33,5 @@ public class Weapon : MonoBehaviour
         }
     }
 
-    protected virtual void Shoot()
-    {
-        
-    }
+    protected virtual void Shoot(){}
 }
