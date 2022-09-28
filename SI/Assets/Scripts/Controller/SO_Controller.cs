@@ -12,8 +12,12 @@ public class SO_Controller : ScriptableObject
     public float dragDeceleration = 12f;
     public float dragMultiplier = 12f;
 
+    [Header("TierSystem")] 
+    public int tiers;
+
     [Header("Flags")] 
     public static int nombreDeFlammes;
+    public bool GetFlag;
 
     [Header("Life")] 
     public float maxLife;

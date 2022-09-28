@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Enemy
+  - Flag
+  - flagSpawnPoint
+  - Home
   layers:
   - Default
   - TransparentFX

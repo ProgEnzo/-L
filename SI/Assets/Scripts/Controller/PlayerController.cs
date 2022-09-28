@@ -6,6 +6,9 @@ using Random = UnityEngine.Random;
 
 public class PlayerController : MonoBehaviour
 {
+    
+    #region Variables Locales Controller
+    
     public static PlayerController instance;
     public SO_Controller SO_Controller;
 
@@ -18,6 +21,8 @@ public class PlayerController : MonoBehaviour
     [Header("Flags")] 
     public List<GameObject> Flammes;
 
+    #endregion
+    
     private void Awake()
     {
         instance = this;
@@ -41,8 +46,8 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         ReInit();
-
         SO_Controller.currentLife = 100f;
+        SO_Controller.GetFlag = false;
     }
     
     public void ReInit()
@@ -121,5 +126,19 @@ public class PlayerController : MonoBehaviour
     {
         SO_Controller.currentLife -= Mathf.Min(Random.value, SO_Controller.currentLife / 4f);
         healthBar.UpdateHealthBar();
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (SO_Controller.GetFlag == true && other.CompareTag("Home"))
+        {
+            SO_Controller.tiers += 1;
+            FindObjectOfType<FlagsSpawnerManager>().SpawnFlag();
+        }
+    }
+
+    public void GetFlag()
+    {
+        
     }
 }
