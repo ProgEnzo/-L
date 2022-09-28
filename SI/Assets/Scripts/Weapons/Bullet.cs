@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 public class Bullet : MonoBehaviour
@@ -7,11 +6,11 @@ public class Bullet : MonoBehaviour
     [SerializeField] private float speed;
     public Vector2 direction;
     public float damages;
-    void Start()
+    protected void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        
     }
-
     void Update()
     {
         rb.velocity = direction * speed;
