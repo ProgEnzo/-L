@@ -319,9 +319,9 @@ MonoBehaviour:
   - 0
   - 0
   damages:
-  - 0
-  - 0
-  - 0
+  - 10
+  - 12
+  - 15
   bullet: {fileID: 9157416093166867173, guid: e420ce0e2175f50489d2192af1af0eb6, type: 3}
   numberOfBullets: 010000000300000005000000
 --- !u!1 &2871587935976452069
@@ -436,6 +436,7 @@ MonoBehaviour:
   m_timerDash: 0
   healthBar: {fileID: 0}
   Flammes: []
+  flag: {fileID: 0}
 --- !u!50 &2871587935976452066
 Rigidbody2D:
   serializedVersion: 4

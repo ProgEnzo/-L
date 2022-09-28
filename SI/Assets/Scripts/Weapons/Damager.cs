@@ -9,6 +9,8 @@ public class Damager : MonoBehaviour
         if (other.CompareTag("Enemy"))
         {
             Debug.Log("Inflige des dégâts");
+            
+            other.GetComponent<Enemies>().TakingDamages(damages);
         }
     }
 }
