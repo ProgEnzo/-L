@@ -22,7 +22,7 @@ public class Weapon : MonoBehaviour
     protected Damager damager;
 
     [Header("Level Up")]
-    protected int level;
+    public int level;
     [SerializeField] protected TierEnum[] tierUpgrade;
 
     private void Start()
