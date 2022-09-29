@@ -337,6 +337,10 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1481238172, guid: d37895b9048c7314d8e5a0be24c58e5a, type: 3}
+      propertyPath: level
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1481238172, guid: d37895b9048c7314d8e5a0be24c58e5a, type: 3}
       propertyPath: tierUpgrade.Array.size
       value: 4
       objectReference: {fileID: 0}
@@ -522,6 +526,31 @@ MonoBehaviour:
   _missileLauncher: {fileID: 440251020}
   _aoe: {fileID: 440251019}
   _meteors: {fileID: 440251018}
+  list: []
+  choices:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+--- !u!1 &935672031 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5038263871277679063, guid: 3f990b536096f6a4596ee97b8a8e8a89, type: 3}
+  m_PrefabInstance: {fileID: 1585529265}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &935672032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 935672031}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b491b1fe7c8010479f0cd94f7ce394b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  life: 0
+  difficultyMultiplier: 2
+  xp: 150
 --- !u!1 &967268167 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5038263871277679063, guid: 3f990b536096f6a4596ee97b8a8e8a89, type: 3}
@@ -541,7 +570,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   life: 0
   difficultyMultiplier: 2
-  xp: 50
+  xp: 60
 --- !u!1001 &1585529265
 PrefabInstance:
   m_ObjectHideFlags: 0

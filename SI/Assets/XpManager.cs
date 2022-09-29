@@ -1,11 +1,7 @@
-using System;
-using System.Collections.Generic;
 using UnityEngine;
-using Random = UnityEngine.Random;
 
 public class XpManager : MonoBehaviour
 {
-
     #region Instance
     
     public static XpManager instance;
@@ -26,9 +22,17 @@ public class XpManager : MonoBehaviour
     
     [SerializeField] private float currentXP;
 
+    private UpgradeManager upgradeManager;
+
+    private void Start()
+    {
+        upgradeManager = GetComponent<UpgradeManager>();
+    }
+
     public void GainXP(float t_xp)
     {
         currentXP += t_xp;
+        upgradeManager.UpgradePartOne();
     }
 
 }
