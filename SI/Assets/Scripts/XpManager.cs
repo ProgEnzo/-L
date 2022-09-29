@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class XpManager : MonoBehaviour
 {
@@ -33,6 +34,8 @@ public class XpManager : MonoBehaviour
     [SerializeField] private float addToEachLevel;
     [SerializeField] private int paliers;
 
+    [SerializeField] private Slider xpBar;
+
     public void Update()
     {
         if (Input.GetKeyDown(KeyCode.G))
@@ -43,6 +46,8 @@ public class XpManager : MonoBehaviour
         {
             FlagXP();
         }
+        
+        xpBar.value = currentXP / xpToNextLevel;
     }
     
     public void GainXP(float t_xp)
@@ -61,8 +66,8 @@ public class XpManager : MonoBehaviour
                 xpToNextLevel += addToEachLevel;
             }
         }
-
-
+        Debug.Log(currentXP / xpToNextLevel);
+        
     }
 
     public void FlagXP()
