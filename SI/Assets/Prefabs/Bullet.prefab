@@ -125,7 +125,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 15
   direction: {x: 0, y: 0}
-  damages: 0
 --- !u!96 &4153470549257625554
 TrailRenderer:
   serializedVersion: 2
@@ -134,7 +133,7 @@ TrailRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3710927679586319304}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -351,5 +350,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3e8c3c39061be0408ce955b67d15319, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tierDamages: 0
-  damages: []
+  damages: 0

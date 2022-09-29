@@ -17,13 +17,13 @@ public class Enemies : MonoBehaviour
         int x = Random.Range(0, a_speed.Length);
         speed = a_speed[x];
         life = a_life[x] * difficultyMultiplier;
-        Debug.Log(life);
 
         gameObject.GetComponent<AIPath>().maxSpeed = speed;
     }
 
     public void TakingDamages(float t_damages)
     {
+        Debug.Log(0);
         life -= t_damages;
         if (life <= 0)
         {
@@ -34,7 +34,7 @@ public class Enemies : MonoBehaviour
     public void Death()
     {
         Debug.Log("Ennemi mort");
-        XpManager.instance.GainXP(xp);
+        //XpManager.instance.GainXP(xp);
         Destroy(gameObject);
     }
 }
