@@ -51,9 +51,4 @@ public class Enemies : MonoBehaviour
             col.gameObject.GetComponent<PlayerController>().TakeDamage(damages);
         }
     }
-
-    private void Update()
-    {
-        throw new NotImplementedException();
-    }
 }
