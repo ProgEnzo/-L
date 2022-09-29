@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour
     
     public static PlayerController instance;
     public SO_Controller SO_Controller;
-
+    
     [SerializeField] private Rigidbody2D m_rigidbody;
     [SerializeField] private float m_timerDash = 0f;
     
@@ -22,9 +22,11 @@ public class PlayerController : MonoBehaviour
     public List<GameObject> Flammes;
 
     public GameObject flag;
-
-    #endregion
     
+    #endregion
+
+    #region Instance
+
     private void Awake()
     {
         instance = this;
@@ -39,6 +41,8 @@ public class PlayerController : MonoBehaviour
             instance = this; 
         }
     }
+
+    #endregion
 
     public void ResetVelocity()
     {
@@ -60,7 +64,8 @@ public class PlayerController : MonoBehaviour
     }
 
     public void Update()
-    {
+    { 
+        
         if (Input.GetKeyDown(KeyCode.Space) && m_timerDash < -0.5f)
         {
             m_timerDash = SO_Controller.m_durationDash;
@@ -125,7 +130,6 @@ public class PlayerController : MonoBehaviour
             m_rigidbody.AddForce(Vector2.right*speed);
         }
     }
-
     private void TakeDamage()
     {
         SO_Controller.currentLife -= Mathf.Min(Random.value, SO_Controller.currentLife / 4f);
@@ -134,7 +138,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (SO_Controller.GetFlag == true && other.CompareTag("Home"))
+        if (SO_Controller.GetFlag && other.CompareTag("Home"))
         {
             SO_Controller.tiers += 1;
             FindObjectOfType<FlagsSpawnerManager>().SpawnFlag();
@@ -143,10 +147,9 @@ public class PlayerController : MonoBehaviour
             FindObjectOfType<hellFireBar>().FlagIsCaptured();
 
             if(flag)
-                Destroy(flag);
+                Destroy(flag); 
         }
     }
-
     public void GetFlag()
     {
         SO_Controller.GetFlag = true;
