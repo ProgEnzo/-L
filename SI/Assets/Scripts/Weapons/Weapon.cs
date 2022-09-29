@@ -40,7 +40,6 @@ public class Weapon : MonoBehaviour
         {
             Shoot();
             timer = cooldowns[tierCooldowns];
-            Debug.Log(cooldowns[tierCooldowns]);
         }
     }
 
