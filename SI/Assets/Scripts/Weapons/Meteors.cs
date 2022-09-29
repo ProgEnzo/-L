@@ -21,4 +21,13 @@ public class Meteors : Weapon
             Destroy(zone, 0.3f);
         }
     }
+
+    public override void LevelUp()
+    {
+        base.LevelUp();
+        if (tierUpgrade[level] == TierEnum.number)
+        {
+            tierNumber++;
+        }
+    }
 }
