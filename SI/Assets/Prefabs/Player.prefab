@@ -586,6 +586,7 @@ GameObject:
   - component: {fileID: 2871587935976452067}
   - component: {fileID: 2871587935976452076}
   - component: {fileID: 173861456}
+  - component: {fileID: 2107972688}
   m_Layer: 7
   m_Name: Player
   m_TagString: Player
@@ -656,7 +657,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 10
-  m_Sprite: {fileID: 21300000, guid: ed2511988baf8e446848340c76818644, type: 3}
+  m_Sprite: {fileID: -912444214, guid: 3d74d6973ab42004b8f583c93543226e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -685,6 +686,8 @@ MonoBehaviour:
   healthBar: {fileID: 0}
   Flammes: []
   flag: {fileID: 0}
+  rb: {fileID: 2871587935976452066}
+  animator: {fileID: 2107972688}
 --- !u!50 &2871587935976452066
 Rigidbody2D:
   serializedVersion: 4
@@ -723,7 +726,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 0.875}
+    oldSize: {x: 1, y: 1}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -932,3 +935,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   direction: {x: 0, y: 0}
+--- !u!95 &2107972688
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2871587935976452069}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f019bcf3dba06ea428c924df72dd14ad, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

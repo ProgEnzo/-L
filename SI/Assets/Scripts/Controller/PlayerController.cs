@@ -43,7 +43,10 @@ public class PlayerController : MonoBehaviour
     }
 
     #endregion
-
+    
+    [SerializeField] private Rigidbody2D rb;
+    [SerializeField] private Animator animator;
+    
     public void ResetVelocity()
     {
         m_rigidbody.velocity = Vector2.zero;
@@ -76,6 +79,33 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.A))
         {
             IncrementFlammes();
+        }
+
+        if (rb.velocity != Vector2.zero)
+        {
+            animator.SetBool("isMoving", true);
+
+            if (rb.velocity.y > 0)
+            {
+                animator.SetBool("isGoingUp", true);
+            }
+            else
+            {
+                animator.SetBool("isGoingUp", false);
+            }
+        }
+        else
+        {
+            animator.SetBool("isMoving", false);
+        }
+
+        if (rb.velocity.x < 0)
+        {
+            gameObject.GetComponent<SpriteRenderer>().flipX = true;
+        }
+        else
+        {
+            gameObject.GetComponent<SpriteRenderer>().flipX = false;
         }
     }
 
