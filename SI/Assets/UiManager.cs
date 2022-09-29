@@ -5,66 +5,90 @@ using UnityEngine;
 public class UiManager : MonoBehaviour
 {
     GameObject[] pauseObjects;
+	GameObject[] finishObjects;
+	PlayerController playerController;
+	void Start () 
+	{
+		Time.timeScale = 1;
 
-    // Use this for initialization
-    void Start () {
-        Time.timeScale = 1;
-        pauseObjects = GameObject.FindGameObjectsWithTag("ShowOnPause");
-        hidePaused();
-    }
-
-    // Update is called once per frame
-    void Update () {
-
-        //uses the p button to pause and unpause the game
-        if(Input.GetKeyDown(KeyCode.P))
-        {
-            if(Time.timeScale == 1)
-            {
-                Time.timeScale = 0;
-                showPaused();
-            } else if (Time.timeScale == 0){
-                Debug.Log ("high");
-                Time.timeScale = 1;
-                hidePaused();
-            }
-        }
-    }
+		pauseObjects = GameObject.FindGameObjectsWithTag("ShowOnPause");			
+		finishObjects = GameObject.FindGameObjectsWithTag("ShowOnFinish");			
 
 
-    //Reloads the Level
-    public void Reload(){
-        Application.LoadLevel(Application.loadedLevel);
-    }
+		hidePaused();
+		hideFinished();
 
-    //controls the pausing of the scene
-    public void pauseControl(){
-        if(Time.timeScale == 1)
-        {
-            Time.timeScale = 0;
-            showPaused();
-        } else if (Time.timeScale == 0){
-            Time.timeScale = 1;
-            hidePaused();
-        }
-    }
+		if(Application.loadedLevelName == "MainLevel")
+			playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+	}
 
-    //shows objects with ShowOnPause tag
-    public void showPaused(){
-        foreach(GameObject g in pauseObjects){
-            g.SetActive(true);
-        }
-    }
+	void Update () 
+	{
 
-    //hides objects with ShowOnPause tag
-    public void hidePaused(){
-        foreach(GameObject g in pauseObjects){
-            g.SetActive(false);
-        }
-    }
+		if(Input.GetKeyDown(KeyCode.P))
+		{
+			if(Time.timeScale == 1 && playerController.SO_Controller.alive == true)
+			{
+				Time.timeScale = 0;
+				showPaused();
+			} else if (Time.timeScale == 0 && playerController.SO_Controller.alive == true){
+				Time.timeScale = 1;
+				hidePaused();
+			}
+		}
 
-    //loads inputted level
-    public void LoadLevel(string level){
-        Application.LoadLevel(level);
-    }
+		if (Time.timeScale == 0 && playerController.SO_Controller.alive == false){
+			showFinished();
+		}
+	}
+
+	public void Reload()
+	{
+		Application.LoadLevel(Application.loadedLevel);
+	}
+
+	public void pauseControl()
+	{
+			if(Time.timeScale == 1)
+			{
+				Time.timeScale = 0;
+				showPaused();
+			} else if (Time.timeScale == 0){
+				Time.timeScale = 1;
+				hidePaused();
+			}
+	}
+
+	public void showPaused()
+	{
+		foreach(GameObject g in pauseObjects){
+			g.SetActive(true);
+		}
+	}
+
+	public void hidePaused()
+	{
+		foreach(GameObject g in pauseObjects){
+			g.SetActive(false);
+		}
+	}
+
+	public void showFinished()
+	{
+		foreach(GameObject g in finishObjects){
+			g.SetActive(true);
+		}
+	}
+
+	public void hideFinished()
+	{
+		foreach(GameObject g in finishObjects){
+			g.SetActive(false);
+		}
+	}
+
+	public void LoadLevel(string level)
+	{
+		Application.LoadLevel(level);
+	}
 }

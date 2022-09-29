@@ -7,8 +7,10 @@ using UnityEngine.UI;
 
 public class timer : MonoBehaviour
 {
-
+    public TextMeshProUGUI scoreText;
     public int score;
+    public float multiplier = 5;
+
     private bool timerActive = false;
     private float currentTime;
     public TextMeshProUGUI currentTimeText;
@@ -25,6 +27,9 @@ public class timer : MonoBehaviour
         {
             currentTime = currentTime + Time.deltaTime;
         }
+
+        score = Mathf.RoundToInt(currentTime * multiplier);
+        scoreText.text = score.ToString("Score:" + score);
 
         TimeSpan time = TimeSpan.FromSeconds(currentTime);
         currentTimeText.text = time.ToString (@"mm\:ss\:fff");

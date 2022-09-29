@@ -10,6 +10,7 @@ TagManager:
   - Home
   - Wall
   - ShowOnPause
+  - ShowOnFinish
   layers:
   - Default
   - TransparentFX
