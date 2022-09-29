@@ -7,23 +7,27 @@ using UnityEngine.UI;
 
 public class timer : MonoBehaviour
 {
+
+    public int score;
     private bool timerActive = false;
     private float currentTime;
-    public int startMinutes;
     public TextMeshProUGUI currentTimeText;
 
     private void Start()
     {
-        currentTime = startMinutes * 60;
+        currentTime = 0;
+        timerActive = true;
     }
 
     private void Update()
     {
         if (timerActive == true)
         {
-            currentTime = currentTime - Time.deltaTime;
+            currentTime = currentTime + Time.deltaTime;
         }
-        currentTimeText.text = currentTime.ToString();
+
+        TimeSpan time = TimeSpan.FromSeconds(currentTime);
+        currentTimeText.text = time.ToString (@"mm\:ss\:fff");
     }
 
     public void StartTimer()
