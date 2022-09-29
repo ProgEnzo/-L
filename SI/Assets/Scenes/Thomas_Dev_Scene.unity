@@ -316,126 +316,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1010960281, guid: d37895b9048c7314d8e5a0be24c58e5a, type: 3}
-      propertyPath: tierUpgrade.Array.size
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1010960281, guid: d37895b9048c7314d8e5a0be24c58e5a, type: 3}
-      propertyPath: tierUpgrade.Array.data[0]
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 1010960281, guid: d37895b9048c7314d8e5a0be24c58e5a, type: 3}
-      propertyPath: tierUpgrade.Array.data[1]
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1010960281, guid: d37895b9048c7314d8e5a0be24c58e5a, type: 3}
-      propertyPath: tierUpgrade.Array.data[2]
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1010960281, guid: d37895b9048c7314d8e5a0be24c58e5a, type: 3}
-      propertyPath: tierUpgrade.Array.data[3]
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1010960281, guid: d37895b9048c7314d8e5a0be24c58e5a, type: 3}
-      propertyPath: tierUpgrade.Array.data[4]
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1106439687, guid: d37895b9048c7314d8e5a0be24c58e5a, type: 3}
-      propertyPath: tierUpgrade.Array.size
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 1106439687, guid: d37895b9048c7314d8e5a0be24c58e5a, type: 3}
-      propertyPath: tierUpgrade.Array.data[0]
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 1106439687, guid: d37895b9048c7314d8e5a0be24c58e5a, type: 3}
-      propertyPath: tierUpgrade.Array.data[1]
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1106439687, guid: d37895b9048c7314d8e5a0be24c58e5a, type: 3}
-      propertyPath: tierUpgrade.Array.data[2]
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1106439687, guid: d37895b9048c7314d8e5a0be24c58e5a, type: 3}
-      propertyPath: tierUpgrade.Array.data[3]
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1106439687, guid: d37895b9048c7314d8e5a0be24c58e5a, type: 3}
-      propertyPath: tierUpgrade.Array.data[4]
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1106439687, guid: d37895b9048c7314d8e5a0be24c58e5a, type: 3}
-      propertyPath: tierUpgrade.Array.data[5]
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1106439687, guid: d37895b9048c7314d8e5a0be24c58e5a, type: 3}
-      propertyPath: tierUpgrade.Array.data[6]
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1402327409, guid: d37895b9048c7314d8e5a0be24c58e5a, type: 3}
-      propertyPath: m_Name
-      value: ShotGun
-      objectReference: {fileID: 0}
-    - target: {fileID: 1402327411, guid: d37895b9048c7314d8e5a0be24c58e5a, type: 3}
-      propertyPath: tierUpgrade.Array.size
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 1402327411, guid: d37895b9048c7314d8e5a0be24c58e5a, type: 3}
-      propertyPath: tierUpgrade.Array.data[0]
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 1402327411, guid: d37895b9048c7314d8e5a0be24c58e5a, type: 3}
-      propertyPath: tierUpgrade.Array.data[1]
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1402327411, guid: d37895b9048c7314d8e5a0be24c58e5a, type: 3}
-      propertyPath: tierUpgrade.Array.data[2]
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1402327411, guid: d37895b9048c7314d8e5a0be24c58e5a, type: 3}
-      propertyPath: tierUpgrade.Array.data[3]
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1402327411, guid: d37895b9048c7314d8e5a0be24c58e5a, type: 3}
-      propertyPath: tierUpgrade.Array.data[4]
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1402327411, guid: d37895b9048c7314d8e5a0be24c58e5a, type: 3}
-      propertyPath: tierUpgrade.Array.data[5]
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1402327411, guid: d37895b9048c7314d8e5a0be24c58e5a, type: 3}
-      propertyPath: tierUpgrade.Array.data[6]
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1481238172, guid: d37895b9048c7314d8e5a0be24c58e5a, type: 3}
-      propertyPath: level
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1481238172, guid: d37895b9048c7314d8e5a0be24c58e5a, type: 3}
-      propertyPath: tierUpgrade.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 1481238172, guid: d37895b9048c7314d8e5a0be24c58e5a, type: 3}
-      propertyPath: tierUpgrade.Array.data[0]
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1481238172, guid: d37895b9048c7314d8e5a0be24c58e5a, type: 3}
-      propertyPath: tierUpgrade.Array.data[1]
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1481238172, guid: d37895b9048c7314d8e5a0be24c58e5a, type: 3}
-      propertyPath: tierUpgrade.Array.data[2]
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1481238172, guid: d37895b9048c7314d8e5a0be24c58e5a, type: 3}
-      propertyPath: tierUpgrade.Array.data[3]
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1481238172, guid: d37895b9048c7314d8e5a0be24c58e5a, type: 3}
-      propertyPath: tierUpgrade.Array.data[4]
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2871587935976452069, guid: d37895b9048c7314d8e5a0be24c58e5a, type: 3}
       propertyPath: m_Name
       value: Player
@@ -482,30 +362,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2871587935976452071, guid: d37895b9048c7314d8e5a0be24c58e5a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5878412541255089279, guid: d37895b9048c7314d8e5a0be24c58e5a, type: 3}
-      propertyPath: tierUpgrade.Array.size
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5878412541255089279, guid: d37895b9048c7314d8e5a0be24c58e5a, type: 3}
-      propertyPath: tierUpgrade.Array.data[0]
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 5878412541255089279, guid: d37895b9048c7314d8e5a0be24c58e5a, type: 3}
-      propertyPath: tierUpgrade.Array.data[1]
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5878412541255089279, guid: d37895b9048c7314d8e5a0be24c58e5a, type: 3}
-      propertyPath: tierUpgrade.Array.data[2]
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5878412541255089279, guid: d37895b9048c7314d8e5a0be24c58e5a, type: 3}
-      propertyPath: tierUpgrade.Array.data[3]
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5878412541255089279, guid: d37895b9048c7314d8e5a0be24c58e5a, type: 3}
-      propertyPath: tierUpgrade.Array.data[4]
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -1031,6 +887,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   life: 0
+  damages: 0
   difficultyMultiplier: 2
   xp: 150
 --- !u!1 &967268167 stripped
@@ -1051,6 +908,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   life: 0
+  damages: 0
   difficultyMultiplier: 2
   xp: 60
 --- !u!1 &1024675565
