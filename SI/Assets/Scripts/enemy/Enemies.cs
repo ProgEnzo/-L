@@ -1,5 +1,7 @@
+using System;
 using Pathfinding;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class Enemies : MonoBehaviour
 {
@@ -13,6 +15,7 @@ public class Enemies : MonoBehaviour
     private float[] a_speed = new []{3f, 5f, 7f};
     private float[] a_life = new []{70f, 50f, 30f};
     private float[] a_damages = new [] {20f, 30f, 40f};
+    private float[] a_size = new[] { 2.3f, 1.75f, 1f };
 
     void Start()
     {
@@ -20,6 +23,8 @@ public class Enemies : MonoBehaviour
         speed = a_speed[x];
         damages = a_damages[x];
         life = a_life[x] * difficultyMultiplier;
+        
+        transform.localScale = Vector3.one * a_size[x];
 
         gameObject.GetComponent<AIPath>().maxSpeed = speed;
     }
@@ -46,5 +51,9 @@ public class Enemies : MonoBehaviour
             col.gameObject.GetComponent<PlayerController>().TakeDamage(damages);
         }
     }
-    
+
+    private void Update()
+    {
+        throw new NotImplementedException();
+    }
 }
