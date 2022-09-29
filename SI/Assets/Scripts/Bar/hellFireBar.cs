@@ -36,15 +36,14 @@ public class hellFireBar : MonoBehaviour
             Time.timeScale = 0;
         }
         
-        FlagIsCaptured();
+        
     }
 
-    private void FlagIsCaptured()
+    public void FlagIsCaptured()
     {
-        if (SO_Controller.nombreDeFlammes == +1)
-        {
-            timeLeft += maxTime / 3f;
-        }
+        timeLeft += maxTime / 3f;
+
+        timeLeft = Mathf.Clamp(timeLeft, 0, maxTime);
     }
   
 }

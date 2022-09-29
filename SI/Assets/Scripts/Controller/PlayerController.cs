@@ -139,6 +139,8 @@ public class PlayerController : MonoBehaviour
             SO_Controller.tiers += 1;
             FindObjectOfType<FlagsSpawnerManager>().SpawnFlag();
             SO_Controller.GetFlag = false;
+            
+            FindObjectOfType<hellFireBar>().FlagIsCaptured();
 
             if(flag)
                 Destroy(flag);
