@@ -20,8 +20,6 @@ public class XpManager : MonoBehaviour
     }
     #endregion
     
-    [SerializeField] private float currentXP;
-
     private UpgradeManager upgradeManager;
 
     private void Start()
@@ -29,17 +27,51 @@ public class XpManager : MonoBehaviour
         upgradeManager = GetComponent<UpgradeManager>();
     }
 
-    void Update()
+    [SerializeField] private int currentLevel;
+    [SerializeField] private float currentXP;
+    [SerializeField] private float xpToNextLevel;
+    [SerializeField] private float addToEachLevel;
+    [SerializeField] private int paliers;
+
+    public void Update()
     {
         if (Input.GetKeyDown(KeyCode.G))
         {
-            GainXP(50);
+            GainXP(10);
+        }
+        if (Input.GetKeyDown(KeyCode.H))
+        {
+            FlagXP();
         }
     }
-
+    
     public void GainXP(float t_xp)
     {
         currentXP += t_xp;
+
+        if (currentXP >= xpToNextLevel)
+        {
+            float tempXP = currentXP - xpToNextLevel;
+            currentLevel++;
+            GainALevel();
+            currentXP = tempXP;
+
+            if (currentLevel % paliers == 0)
+            {
+                xpToNextLevel += addToEachLevel;
+            }
+        }
+
+
+    }
+
+    public void FlagXP()
+    {
+        GainXP(xpToNextLevel);
+    }
+
+    private void GainALevel()
+    {
         upgradeManager.UpgradePartOne();
     }
 
