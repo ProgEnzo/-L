@@ -139,7 +139,7 @@ public class PlayerController : MonoBehaviour
             SO_Controller.tiers += 1;
             FindObjectOfType<FlagsSpawnerManager>().SpawnFlag();
             SO_Controller.GetFlag = false;
-            
+
             if(flag)
                 Destroy(flag);
         }

@@ -11,6 +11,8 @@ public class hellFireBar : MonoBehaviour
     public float maxTime;
     private float timeLeft;
     public GameObject TimesUp;
+    
+    //Appeler nombre de flammes et dire que quand celui-ci s'incrémente de 1 la Hellbar s'aincrémente de 33% de la valeur initiale de maxTimer
 
     private void Start()
     {
@@ -33,5 +35,16 @@ public class hellFireBar : MonoBehaviour
             TimesUp.SetActive(true);
             Time.timeScale = 0;
         }
+        
+        FlagIsCaptured();
     }
+
+    private void FlagIsCaptured()
+    {
+        if (SO_Controller.nombreDeFlammes == +1)
+        {
+            timeLeft += maxTime / 3f;
+        }
+    }
+  
 }

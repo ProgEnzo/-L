@@ -17,7 +17,7 @@ public class SO_Controller : ScriptableObject
 
     [Header("Flags")] 
     public static int nombreDeFlammes;
-    public bool GetFlag;
+    public static bool GetFlag;
 
     [Header("Life")] 
     public float maxLife;
