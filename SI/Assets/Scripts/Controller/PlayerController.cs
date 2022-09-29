@@ -77,14 +77,6 @@ public class PlayerController : MonoBehaviour
         {
             IncrementFlammes();
         }
-
-        if (Input.GetKey(KeyCode.E))
-        {
-            TakeDamage();
-            
-            Debug.Log("le joueur prend des dégats");
-        }
-
     }
 
     public void FixedUpdate()
@@ -130,10 +122,15 @@ public class PlayerController : MonoBehaviour
             m_rigidbody.AddForce(Vector2.right*speed);
         }
     }
-    private void TakeDamage()
+    public void TakeDamage(float damages)
     {
-        SO_Controller.currentLife -= Mathf.Min(Random.value, SO_Controller.currentLife / 4f);
+        SO_Controller.currentLife -= damages; //créer une variable dégat pour les ennemis 
         healthBar.UpdateHealthBar();
+
+        if (SO_Controller.currentLife <= 0)
+        {
+            playerIsDead();
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -149,9 +146,15 @@ public class PlayerController : MonoBehaviour
             if(flag)
                 Destroy(flag); 
         }
+        
     }
     public void GetFlag()
     {
         SO_Controller.GetFlag = true;
+    }
+
+    public void playerIsDead()
+    {
+        Destroy(gameObject);
     }
 }
