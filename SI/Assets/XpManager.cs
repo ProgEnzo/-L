@@ -29,6 +29,14 @@ public class XpManager : MonoBehaviour
         upgradeManager = GetComponent<UpgradeManager>();
     }
 
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.G))
+        {
+            GainXP(50);
+        }
+    }
+
     public void GainXP(float t_xp)
     {
         currentXP += t_xp;
