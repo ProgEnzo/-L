@@ -316,6 +316,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1010960281, guid: d37895b9048c7314d8e5a0be24c58e5a, type: 3}
+      propertyPath: damages.Array.data[0]
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1010960281, guid: d37895b9048c7314d8e5a0be24c58e5a, type: 3}
+      propertyPath: damages.Array.data[1]
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 1010960281, guid: d37895b9048c7314d8e5a0be24c58e5a, type: 3}
+      propertyPath: damages.Array.data[2]
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 1106439687, guid: d37895b9048c7314d8e5a0be24c58e5a, type: 3}
+      propertyPath: damages.Array.data[0]
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1106439687, guid: d37895b9048c7314d8e5a0be24c58e5a, type: 3}
+      propertyPath: damages.Array.data[1]
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 1106439687, guid: d37895b9048c7314d8e5a0be24c58e5a, type: 3}
+      propertyPath: damages.Array.data[2]
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 2871587935976452069, guid: d37895b9048c7314d8e5a0be24c58e5a, type: 3}
       propertyPath: m_Name
       value: Player

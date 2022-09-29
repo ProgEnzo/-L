@@ -56,9 +56,9 @@ MonoBehaviour:
   - 0
   - 0
   damages:
-  - 0
-  - 0
-  - 0
+  - 20
+  - 50
+  - 100
   bullet: {fileID: 0}
   level: 0
   tierUpgrade: 0400000001000000000000000100000000000000
@@ -120,9 +120,9 @@ MonoBehaviour:
   - 0
   - 0
   damages:
-  - 0
-  - 0
-  - 0
+  - 20
+  - 50
+  - 100
   bullet: {fileID: 0}
   level: 0
   tierUpgrade: 04000000010000000000000003000000010000000000000003000000
