@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 5038263871277679050}
   - component: {fileID: 5038263871277679049}
   - component: {fileID: 935672032}
-  - component: {fileID: 935672041}
+  - component: {fileID: 172092784}
   m_Layer: 0
   m_Name: Enemy test
   m_TagString: Enemy
@@ -238,9 +238,9 @@ MonoBehaviour:
   damages: 0
   difficultyMultiplier: 2
   xp: 20
-  animator: {fileID: 0}
-  rb: {fileID: 0}
---- !u!95 &935672041
+  animator: {fileID: 172092784}
+  rb: {fileID: 5038263871277679050}
+--- !u!95 &172092784
 Animator:
   serializedVersion: 4
   m_ObjectHideFlags: 0

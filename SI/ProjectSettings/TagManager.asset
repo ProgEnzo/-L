@@ -9,6 +9,7 @@ TagManager:
   - flagSpawnPoint
   - Home
   - Wall
+  - ShowOnPause
   layers:
   - Default
   - TransparentFX
