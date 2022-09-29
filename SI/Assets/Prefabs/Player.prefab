@@ -60,6 +60,8 @@ MonoBehaviour:
   - 0
   - 0
   bullet: {fileID: 0}
+  level: 0
+  tierUpgrade: 0400000001000000000000000100000000000000
   dangerZone: {fileID: 3849128226693560661, guid: ec24994bbdcab7f4da6e756db101404d, type: 3}
 --- !u!1 &1106439685
 GameObject:
@@ -122,6 +124,8 @@ MonoBehaviour:
   - 0
   - 0
   bullet: {fileID: 0}
+  level: 0
+  tierUpgrade: 04000000010000000000000003000000010000000000000003000000
   tierNumber: 0
   numbers:
   - 2
@@ -152,7 +156,7 @@ GameObject:
   - component: {fileID: 1402327410}
   - component: {fileID: 1402327411}
   m_Layer: 7
-  m_Name: Shot-Fucking-Gun
+  m_Name: ShotGun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -201,6 +205,8 @@ MonoBehaviour:
   - 50
   - 100
   bullet: {fileID: 3710927679586319304, guid: bb210ac6d5dd45a4eb118ecb9bc0fb3b, type: 3}
+  level: 0
+  tierUpgrade: 04000000010000000000000002000000010000000000000002000000
   numberOfBullets: 030000000500000007000000
 --- !u!1 &1481238170
 GameObject:
@@ -262,6 +268,8 @@ MonoBehaviour:
   - 40
   - 60
   bullet: {fileID: 3710927679586319304, guid: bb210ac6d5dd45a4eb118ecb9bc0fb3b, type: 3}
+  level: 0
+  tierUpgrade: 01000000000000000100000000000000
   numberOfBullets: 010000000300000007000000
 --- !u!1 &774093269675666337
 GameObject:
@@ -323,6 +331,8 @@ MonoBehaviour:
   - 12
   - 15
   bullet: {fileID: 9157416093166867173, guid: e420ce0e2175f50489d2192af1af0eb6, type: 3}
+  level: 0
+  tierUpgrade: 0400000001000000000000000100000000000000
   numberOfBullets: 010000000300000005000000
 --- !u!1 &2871587935976452069
 GameObject:

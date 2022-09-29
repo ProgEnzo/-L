@@ -1,5 +1,7 @@
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using Button = UnityEngine.UI.Button;
 
 public class UpgradeManager : MonoBehaviour
 {
@@ -42,12 +44,16 @@ public class UpgradeManager : MonoBehaviour
     //Ajouter l'arme dans une liste
 
     public GameObject[] choices;
+
+    private GameObject aChoice;
+    private GameObject bChoice;
+    private GameObject cChoice;
     
     private void UpgradePartTwo()
     {
-        GameObject aChoice = list[Random.Range(0,list.Count-1)];
-        GameObject bChoice = list[Random.Range(0,list.Count-1)];
-        GameObject cChoice = list[Random.Range(0,list.Count-1)];
+        aChoice = list[Random.Range(0,list.Count-1)];
+        bChoice = list[Random.Range(0,list.Count-1)];
+        cChoice = list[Random.Range(0,list.Count-1)];
         
         while (aChoice == bChoice || aChoice == cChoice || bChoice == cChoice)
         {
@@ -75,16 +81,65 @@ public class UpgradeManager : MonoBehaviour
 
     }
 
+    [SerializeField] private Button[] buttons;
+    [SerializeField] private TextMeshProUGUI button1;
+    [SerializeField] private TextMeshProUGUI button2;
+    [SerializeField] private TextMeshProUGUI button3;
+    
     private void UpgradePartThree()
     {
-        UpgradePartFour();
+        for (int i = 0; i < buttons.Length; i++)
+        {
+            buttons[i].gameObject.SetActive(true);
+        }
+        
+        button1.text = $"{aChoice.name}";
+        button2.text = $"{bChoice.name}";
+        button3.text = $"{cChoice.name}";
+
+        Time.timeScale = 0f;
     }
     //Afficher dans le canva les améliorations
-
-    private void UpgradePartFour()
+    
+    private GameObject tempChoice;
+    
+    public void UpgradePartFour(int _x)
     {
+        switch (_x)
+        {
+           case 1:
+               tempChoice = aChoice;
+               break;
+           case 2:
+               tempChoice = bChoice;
+               break;
+           case 3:
+               tempChoice = cChoice;
+               break;
+        }
+
+        if (tempChoice == _mitraillette || tempChoice == _shotgun || tempChoice == _missileLauncher)
+        {
+            tempChoice.GetComponent<ProjectilesWeapon>().LevelUp();
+        }
+        else if (tempChoice == _aoe)
+        {
+            tempChoice.GetComponent<AOE>().LevelUp();
+        }
+        else if (tempChoice == _meteors)
+        {
+            tempChoice.GetComponent<Meteors>().LevelUp();
+        }
+
+        Time.timeScale = 1f;
+        
+        for (int i = 0; i < buttons.Length; i++)
+        {
+            buttons[i].gameObject.SetActive(false);
+        }
         
     }
+    //Envoyer la modif aux scripts
 }
 
 public enum TierEnum
