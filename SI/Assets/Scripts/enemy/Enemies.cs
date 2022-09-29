@@ -10,13 +10,14 @@ public class Enemies : MonoBehaviour
     public float damages;
 
     public float difficultyMultiplier = 15f;
-    public float xp = 10f;
+    public float xp;
 
-    private float[] a_speed = new []{3f, 5f, 7f};
-    private float[] a_life = new []{70f, 50f, 30f};
-    private float[] a_damages = new [] {20f, 30f, 40f};
-    private float[] a_size = new[] { 2.3f, 1.75f, 1f };
-
+    private float[] a_speed = {3f, 5f, 7f};
+    private float[] a_life = {70f, 50f, 30f};
+    private float[] a_damages = {20f, 30f, 40f};
+    private float[] a_size = { 2.3f, 1.75f, 1f };
+    private float[] a_xp = { 15f, 10f, 5f };
+    
     [SerializeField] private Animator animator;
 
     void Start()
@@ -24,11 +25,14 @@ public class Enemies : MonoBehaviour
         int x = Random.Range(0, a_speed.Length);
         speed = a_speed[x];
         damages = a_damages[x];
+        xp = a_xp[x];
         life = a_life[x] * difficultyMultiplier;
         
         transform.localScale = Vector3.one * a_size[x];
 
         gameObject.GetComponent<AIPath>().maxSpeed = speed;
+
+        animator = GetComponent<Animator>();
     }
 
     [SerializeField] private Rigidbody2D rb;
