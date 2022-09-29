@@ -19,8 +19,10 @@ public class Enemies : MonoBehaviour
     private float[] a_xp = { 15f, 10f, 5f };
     
     [SerializeField] private Animator animator;
+    [SerializeField] private Rigidbody2D rb;
+    private GameObject player;
 
-    void Start()
+    private void Start()
     {
         int x = Random.Range(0, a_speed.Length);
         speed = a_speed[x];
@@ -33,13 +35,14 @@ public class Enemies : MonoBehaviour
         gameObject.GetComponent<AIPath>().maxSpeed = speed;
 
         animator = GetComponent<Animator>();
+        rb = GetComponent<Rigidbody2D>();
+        player = GameObject.FindGameObjectWithTag("Player");
     }
-
-    [SerializeField] private Rigidbody2D rb;
-
-    void Update()
+    private void Update()
     {
-        if (rb.velocity.y > 0)
+        Debug.Log("ptn d'anges");
+
+        if (player.transform.position.y > transform.position.y)
         {
             animator.SetBool("isGoingUp", true);
         }
@@ -48,7 +51,7 @@ public class Enemies : MonoBehaviour
             animator.SetBool("isGoingUp", false);
         }
 
-        if (rb.velocity.x < 0)
+        if (player.transform.position.x < transform.position.x)
         {
             gameObject.GetComponent<SpriteRenderer>().flipX = true;
         }
@@ -56,6 +59,7 @@ public class Enemies : MonoBehaviour
         {
             gameObject.GetComponent<SpriteRenderer>().flipX = false;
         }
+        
         
     }
 

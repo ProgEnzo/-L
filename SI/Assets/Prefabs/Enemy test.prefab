@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 5038263871277679050}
   - component: {fileID: 5038263871277679049}
   - component: {fileID: 935672032}
+  - component: {fileID: 935672041}
   m_Layer: 0
   m_Name: Enemy test
   m_TagString: Enemy
@@ -237,3 +238,25 @@ MonoBehaviour:
   damages: 0
   difficultyMultiplier: 2
   xp: 20
+  animator: {fileID: 0}
+  rb: {fileID: 0}
+--- !u!95 &935672041
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5038263871277679063}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1fac350c6b0eec445ad539b1561f8585, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
