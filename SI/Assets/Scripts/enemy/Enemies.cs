@@ -10,7 +10,7 @@ public class Enemies : MonoBehaviour
     public float damages;
 
     public float difficultyMultiplier = 15f;
-    public float xp;
+    public float xp = 10f;
 
     private float[] a_speed = new []{3f, 5f, 7f};
     private float[] a_life = new []{70f, 50f, 30f};
@@ -40,8 +40,7 @@ public class Enemies : MonoBehaviour
     }
     public void Death()
     {
-        Debug.Log("Ennemi mort");
-        //XpManager.instance.GainXP(xp);
+        XpManager.instance.GainXP(xp);
         Destroy(gameObject);
     }
     private void OnCollisionEnter2D(Collision2D col)

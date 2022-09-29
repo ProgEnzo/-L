@@ -1,7 +1,9 @@
+using System;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using Button = UnityEngine.UI.Button;
+using Random = UnityEngine.Random;
 
 public class UpgradeManager : MonoBehaviour
 {
@@ -14,6 +16,13 @@ public class UpgradeManager : MonoBehaviour
     //Ajouter les 5 armes
 
     [SerializeField] private List<GameObject> list;
+
+    public Texture2D cursor;
+    
+    private void Start()
+    {
+        Cursor.SetCursor(cursor, Vector2.zero, CursorMode.ForceSoftware);
+    }
 
     public void UpgradePartOne()
     {
@@ -98,6 +107,7 @@ public class UpgradeManager : MonoBehaviour
         button3.text = $"{cChoice.name}";
 
         Time.timeScale = 0f;
+        Cursor.SetCursor(null, Vector2.zero, CursorMode.ForceSoftware);
     }
     //Afficher dans le canva les améliorations
     
@@ -132,6 +142,7 @@ public class UpgradeManager : MonoBehaviour
         }
 
         Time.timeScale = 1f;
+        Cursor.SetCursor(cursor, Vector2.zero, CursorMode.ForceSoftware);
         
         for (int i = 0; i < buttons.Length; i++)
         {
