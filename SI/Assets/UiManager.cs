@@ -25,21 +25,21 @@ public class UiManager : MonoBehaviour
 	void Update () 
 	{
 
-		if(Input.GetKeyDown(KeyCode.P))
+		if(Input.GetKeyDown(KeyCode.Escape))
 		{
-			if(Time.timeScale == 1 && playerController.SO_Controller.alive == true)
+			if(Time.timeScale == 1 /*&& playerController.SO_Controller.alive == true*/)
 			{
 				Time.timeScale = 0;
 				showPaused();
-			} else if (Time.timeScale == 0 && playerController.SO_Controller.alive == true){
+			} else if (Time.timeScale == 0 /*&& playerController.SO_Controller.alive == true*/){
 				Time.timeScale = 1;
 				hidePaused();
 			}
 		}
 
-		if (Time.timeScale == 0 && playerController.SO_Controller.alive == false){
+		/*if (Time.timeScale == 0 && playerController.SO_Controller.alive == false){
 			showFinished();
-		}
+		}*/
 	}
 
 	public void Reload()

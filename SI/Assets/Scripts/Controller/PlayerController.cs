@@ -55,7 +55,7 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         ReInit();
-        SO_Controller.alive = true;
+        //SO_Controller.alive = true;
         SO_Controller.currentLife = 100f;
         SO_Controller.tiers = 0;
         SO_Controller.GetFlag = false;
@@ -186,8 +186,6 @@ public class PlayerController : MonoBehaviour
 
     public void playerIsDead()
     {
-        SO_Controller.alive = false;
-        Time.timeScale = 0;
         Destroy(gameObject);
     }
 }

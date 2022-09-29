@@ -22,5 +22,4 @@ public class SO_Controller : ScriptableObject
     [Header("Life")] 
     public float maxLife;
     public float currentLife;
-    public bool alive;
 }
