@@ -236,12 +236,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   life: 0
   damages: 0
+  flash: {fileID: 2100000, guid: 5d866efb08e86ec46835acb5815355cd, type: 2}
+  normal: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   difficultyMultiplier: 1
   xp: 20
   _timer: {fileID: 0}
   animator: {fileID: 172092784}
   dropRate: 0.6
   healingHeart: {fileID: 604355006269873319, guid: a17f000588e92e240af6714c384621c5, type: 3}
+  isFlashing: 0
 --- !u!95 &172092784
 Animator:
   serializedVersion: 4
