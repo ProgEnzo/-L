@@ -236,10 +236,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   life: 0
   damages: 0
-  difficultyMultiplier: 2
+  difficultyMultiplier: 1
   xp: 20
+  _timer: {fileID: 0}
   animator: {fileID: 172092784}
-  rb: {fileID: 5038263871277679050}
+  dropRate: 0.6
+  healingHeart: {fileID: 604355006269873319, guid: a17f000588e92e240af6714c384621c5, type: 3}
 --- !u!95 &172092784
 Animator:
   serializedVersion: 4

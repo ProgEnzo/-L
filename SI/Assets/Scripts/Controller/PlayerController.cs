@@ -167,6 +167,16 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public void RestoreHealth(float health)
+    {
+        SO_Controller.currentLife += health;
+        if (SO_Controller.currentLife >= SO_Controller.maxLife)
+        {
+            SO_Controller.currentLife = SO_Controller.maxLife;
+        }
+        healthBar.UpdateHealthBar();
+    }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (SO_Controller.GetFlag && other.CompareTag("Home"))

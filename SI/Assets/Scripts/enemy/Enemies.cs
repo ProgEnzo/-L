@@ -1,4 +1,3 @@
-using System;
 using Pathfinding;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -9,9 +8,11 @@ public class Enemies : MonoBehaviour
     public float life;
     public float damages;
 
-    public float difficultyMultiplier = 15f;
+    public float difficultyMultiplier = 1f;
     public float xp;
 
+    [SerializeField] private timer _timer;
+    
     private float[] a_speed = {3f, 5f, 7f};
     private float[] a_life = {70f, 50f, 30f};
     private float[] a_damages = {20f, 30f, 40f};
@@ -19,11 +20,16 @@ public class Enemies : MonoBehaviour
     private float[] a_xp = { 15f, 10f, 5f };
     
     [SerializeField] private Animator animator;
-    [SerializeField] private Rigidbody2D rb;
     private GameObject player;
+
+    [SerializeField] private float dropRate;
+    [SerializeField] private GameObject healingHeart;
 
     private void Start()
     {
+        float currentTime = _timer.currentTime;
+        //difficultyMultiplier += currentTime / 100;
+        
         int x = Random.Range(0, a_speed.Length);
         speed = a_speed[x];
         damages = a_damages[x];
@@ -35,7 +41,6 @@ public class Enemies : MonoBehaviour
         gameObject.GetComponent<AIPath>().maxSpeed = speed;
 
         animator = GetComponent<Animator>();
-        rb = GetComponent<Rigidbody2D>();
         player = GameObject.FindGameObjectWithTag("Player");
     }
     private void Update()
@@ -59,8 +64,7 @@ public class Enemies : MonoBehaviour
         {
             gameObject.GetComponent<SpriteRenderer>().flipX = false;
         }
-        
-        
+
     }
 
     public void TakingDamages(float t_damages)
@@ -75,13 +79,23 @@ public class Enemies : MonoBehaviour
     public void Death()
     {
         XpManager.instance.GainXP(xp);
+        DropLife();
         Destroy(gameObject);
     }
+    
     private void OnCollisionEnter2D(Collision2D col)
     {
         if (col.gameObject.CompareTag("Player"))
         {
             col.gameObject.GetComponent<PlayerController>().TakeDamage(damages);
+        }
+    }
+
+    private void DropLife()
+    {
+        if (Random.Range(0f, 1f) <= dropRate)
+        {
+            Instantiate(healingHeart, new Vector3(transform.position.x, transform.position.y, 0), Quaternion.identity);
         }
     }
 }
