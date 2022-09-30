@@ -199,8 +199,11 @@ public class PlayerController : MonoBehaviour
         SO_Controller.GetFlag = true;
     }
 
+    [SerializeField] private GameController GC;
+
     public void playerIsDead()
     {
         gameObject.SetActive(false);
+        GC.GameOver();
     }
 }

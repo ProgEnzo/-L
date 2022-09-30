@@ -1,0 +1,89 @@
+using UnityEngine;
+using UnityEngine.UI;
+using DG.Tweening;
+using Unity.VisualScripting;
+
+public class XpManager : MonoBehaviour
+{
+    #region Instance
+    
+    public static XpManager instance;
+
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Debug.Log("Il y a plus d'une instance de XpManager");
+            DestroyImmediate(this);
+        }
+    }
+    #endregion
+    
+    private UpgradeManager upgradeManager;
+
+    private void Start()
+    {
+        currentXP = 0f;
+        xpBar = GetComponent<Image>();
+        upgradeManager = GetComponent<UpgradeManager>();
+    }
+
+    [SerializeField] private int currentLevel;
+    [SerializeField] private float currentXP;
+    [SerializeField] private float xpToNextLevel;
+    [SerializeField] private float addToEachLevel;
+    [SerializeField] private int paliers;
+
+    [SerializeField] private Image xpBar;
+    
+    public void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.G))
+        {
+            GainXP(10);
+        }
+        if (Input.GetKeyDown(KeyCode.H))
+        {
+            FlagXP();
+        }
+        
+        xpBar.DOFillAmount(currentXP / xpToNextLevel, duration : 0.15f); 
+        
+        Color newColor = Color.green;
+    }
+    
+    public void GainXP(float t_xp)
+    {
+        currentXP += t_xp;
+
+        if (currentXP >= xpToNextLevel)
+        {
+            float tempXP = currentXP - xpToNextLevel;
+            currentLevel++;
+            GainALevel();
+            currentXP = tempXP;
+
+            if (currentLevel % paliers == 0)
+            {
+                xpToNextLevel += addToEachLevel;
+            }
+        }
+        Debug.Log(currentXP / xpToNextLevel);
+        
+    }
+
+    public void FlagXP()
+    {
+        GainXP(xpToNextLevel);
+    }
+
+    private void GainALevel()
+    {
+        upgradeManager.UpgradePartOne();
+    }
+
+}

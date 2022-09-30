@@ -35,7 +35,11 @@ public class hellFireBar : MonoBehaviour
             TimesUp.SetActive(true);
             Time.timeScale = 0;
         }
-        
+
+        if (timeLeft == 0)
+        {
+            PlayerController.instance.TakeDamage(1000f);
+        }
         
     }
 
