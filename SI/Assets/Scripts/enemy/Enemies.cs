@@ -71,15 +71,15 @@ public class Enemies : MonoBehaviour
             gameObject.GetComponent<SpriteRenderer>().flipX = false;
         }
         
-        if (isFlashing == false)
+        //if (isFlashing == false)
         {
             isFlashing = true;
-            myTween = rend.material.DOColor(Color.white, 0.2f).SetEase(Ease.InFlash, 2, 0).SetAutoKill(false).OnComplete(ResetFlash);
+            //myTween = rend.material.DOColor(Color.white, 0.2f).SetEase(Ease.InFlash, 2, 0).SetAutoKill(false).OnComplete(ResetFlash);
         }
 
-        if (isFlashing == true)
+        //if (isFlashing == true)
         {
-            myTween.Restart();
+            //myTween.Restart();
         }
 
     }

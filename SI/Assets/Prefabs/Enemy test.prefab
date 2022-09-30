@@ -59,7 +59,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -242,6 +242,7 @@ MonoBehaviour:
   animator: {fileID: 172092784}
   dropRate: 0.6
   healingHeart: {fileID: 604355006269873319, guid: a17f000588e92e240af6714c384621c5, type: 3}
+  isFlashing: 0
 --- !u!95 &172092784
 Animator:
   serializedVersion: 4
