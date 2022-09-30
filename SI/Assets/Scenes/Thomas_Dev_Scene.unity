@@ -11671,18 +11671,6 @@ PrefabInstance:
       propertyPath: _timer
       value: 
       objectReference: {fileID: 568654262}
-    - target: {fileID: 935672032, guid: 3f990b536096f6a4596ee97b8a8e8a89, type: 3}
-      propertyPath: dropRate
-      value: 0.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 935672032, guid: 3f990b536096f6a4596ee97b8a8e8a89, type: 3}
-      propertyPath: healingHeart
-      value: 
-      objectReference: {fileID: 604355006269873319, guid: a17f000588e92e240af6714c384621c5, type: 3}
-    - target: {fileID: 935672032, guid: 3f990b536096f6a4596ee97b8a8e8a89, type: 3}
-      propertyPath: difficultyMultiplier
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5038263871277679048, guid: 3f990b536096f6a4596ee97b8a8e8a89, type: 3}
       propertyPath: m_RootOrder
       value: 6
