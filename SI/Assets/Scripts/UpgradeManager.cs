@@ -118,15 +118,15 @@ public class UpgradeManager : MonoBehaviour
         {
             if (weapons[i].GetComponent<ProjectilesWeapon>() != null)
             {
-                levels[i].text = $"{weapons[i].GetComponent<ProjectilesWeapon>().level}";
+                levels[i].text = $"{weapons[i].GetComponent<ProjectilesWeapon>().level + 1}";
             }
             else if (weapons[i].GetComponent<AOE>() != null)
             {
-                levels[i].text = $"{weapons[i].GetComponent<AOE>().level}";
+                levels[i].text = $"{weapons[i].GetComponent<AOE>().level + 1}";
             }
             else if (weapons[i].GetComponent<Meteors>() != null)
             {
-                levels[i].text = $"{weapons[i].GetComponent<Meteors>().level}";
+                levels[i].text = $"{weapons[i].GetComponent<Meteors>().level + 1}";
             }
         }
 
