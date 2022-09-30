@@ -18,7 +18,7 @@ public class UiManager : MonoBehaviour
 		hidePaused();
 		hideFinished();
 
-		if(Application.loadedLevelName == "MainLevel")
+		if(Application.loadedLevelName == "SampleScene")
 			playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
 	}
 
@@ -31,15 +31,17 @@ public class UiManager : MonoBehaviour
 			{
 				Time.timeScale = 0;
 				showPaused();
-			} else if (Time.timeScale == 0 /*&& playerController.SO_Controller.alive == true*/){
+			} else if (Time.timeScale == 0 /*&& playerController.SO_Controller.alive == true*/)
+			{
 				Time.timeScale = 1;
 				hidePaused();
 			}
 		}
 
-		/*if (Time.timeScale == 0 && playerController.SO_Controller.alive == false){
+		if (playerController.alive == false)
+		{
 			showFinished();
-		}*/
+		}
 	}
 
 	public void Reload()
@@ -61,7 +63,8 @@ public class UiManager : MonoBehaviour
 
 	public void showPaused()
 	{
-		foreach(GameObject g in pauseObjects){
+		foreach(GameObject g in pauseObjects)
+		{
 			g.SetActive(true);
 		}
 	}

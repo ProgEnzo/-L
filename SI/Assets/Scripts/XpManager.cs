@@ -47,7 +47,7 @@ public class XpManager : MonoBehaviour
             FlagXP();
         }
         
-        xpBar.value = currentXP / xpToNextLevel;
+        xpBar.value = currentXP / xpToNextLevel; // le faire avec dotween pour que ce soit propre
     }
     
     public void GainXP(float t_xp)

@@ -18,6 +18,8 @@ public class PlayerController : MonoBehaviour
     [Header("Life")]
     public healthBar healthBar;
 
+    public bool alive = true;
+
     [Header("Flags")] 
     public List<GameObject> Flammes;
 
@@ -55,7 +57,7 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         ReInit();
-        //SO_Controller.alive = true;
+        alive = true;
         SO_Controller.currentLife = 100f;
         SO_Controller.tiers = 0;
         SO_Controller.GetFlag = false;
@@ -155,11 +157,12 @@ public class PlayerController : MonoBehaviour
     }
     public void TakeDamage(float damages)
     {
-        SO_Controller.currentLife -= damages; //créer une variable dégat pour les ennemis 
+        SO_Controller.currentLife -= damages; 
         healthBar.UpdateHealthBar();
 
         if (SO_Controller.currentLife <= 0)
         {
+            alive = false;
             playerIsDead();
         }
     }
@@ -186,6 +189,6 @@ public class PlayerController : MonoBehaviour
 
     public void playerIsDead()
     {
-        Destroy(gameObject);
+        gameObject.SetActive(false);
     }
 }
