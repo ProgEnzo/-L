@@ -12,7 +12,7 @@ public class timer : MonoBehaviour
     public float multiplier = 5;
 
     private bool timerActive = false;
-    private float currentTime;
+    public float currentTime;
     public TextMeshProUGUI currentTimeText;
 
     private void Start()
