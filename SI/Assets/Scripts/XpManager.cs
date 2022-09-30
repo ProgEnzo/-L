@@ -1,5 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
+using DG.Tweening;
+using Unity.VisualScripting;
 
 public class XpManager : MonoBehaviour
 {
@@ -25,6 +27,8 @@ public class XpManager : MonoBehaviour
 
     private void Start()
     {
+        currentXP = 0f;
+        xpBar = GetComponent<Image>();
         upgradeManager = GetComponent<UpgradeManager>();
     }
 
@@ -34,8 +38,8 @@ public class XpManager : MonoBehaviour
     [SerializeField] private float addToEachLevel;
     [SerializeField] private int paliers;
 
-    [SerializeField] private Slider xpBar;
-
+    [SerializeField] private Image xpBar;
+    
     public void Update()
     {
         if (Input.GetKeyDown(KeyCode.G))
@@ -47,7 +51,9 @@ public class XpManager : MonoBehaviour
             FlagXP();
         }
         
-        xpBar.value = currentXP / xpToNextLevel; // le faire avec dotween pour que ce soit propre
+        xpBar.DOFillAmount(currentXP / xpToNextLevel, duration : 0.15f); 
+        
+        Color newColor = Color.green;
     }
     
     public void GainXP(float t_xp)
