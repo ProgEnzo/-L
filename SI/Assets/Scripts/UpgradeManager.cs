@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Xml.Schema;
 using TMPro;
 using UnityEngine;
 using Button = UnityEngine.UI.Button;
@@ -94,9 +95,16 @@ public class UpgradeManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI button1;
     [SerializeField] private TextMeshProUGUI button2;
     [SerializeField] private TextMeshProUGUI button3;
-    
+
+    [SerializeField] private TextMeshProUGUI[] levels;
+    [SerializeField] private GameObject[] weapons;
+
     private void UpgradePartThree()
     {
+        weapons[0] = aChoice;
+        weapons[1] = bChoice;
+        weapons[2] = cChoice;
+        
         for (int i = 0; i < buttons.Length; i++)
         {
             buttons[i].gameObject.SetActive(true);
@@ -105,6 +113,22 @@ public class UpgradeManager : MonoBehaviour
         button1.text = $"{aChoice.name}";
         button2.text = $"{bChoice.name}";
         button3.text = $"{cChoice.name}";
+
+        for (int i = 0; i < levels.Length; i++)
+        {
+            if (weapons[i].GetComponent<ProjectilesWeapon>() != null)
+            {
+                levels[i].text = $"{weapons[i].GetComponent<ProjectilesWeapon>().level}";
+            }
+            else if (weapons[i].GetComponent<AOE>() != null)
+            {
+                levels[i].text = $"{weapons[i].GetComponent<AOE>().level}";
+            }
+            else if (weapons[i].GetComponent<Meteors>() != null)
+            {
+                levels[i].text = $"{weapons[i].GetComponent<Meteors>().level}";
+            }
+        }
 
         Time.timeScale = 0f;
         Cursor.SetCursor(null, Vector2.zero, CursorMode.ForceSoftware);
