@@ -27,8 +27,9 @@ public class Enemies : MonoBehaviour
 
     private void Start()
     {
+        _timer = FindObjectOfType<timer>();
         float currentTime = _timer.currentTime;
-        //difficultyMultiplier += currentTime / 100;
+        difficultyMultiplier += currentTime / 100;
         
         int x = Random.Range(0, a_speed.Length);
         speed = a_speed[x];
