@@ -9893,6 +9893,7 @@ MonoBehaviour:
   scoreText: {fileID: 148885002}
   score: 0
   multiplier: 5
+  currentTime: 0
   currentTimeText: {fileID: 240354145}
 --- !u!1 &1962060232
 GameObject:

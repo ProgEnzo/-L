@@ -22,7 +22,7 @@ public class enemySpawner : MonoBehaviour
 
     public int ID;
 
-    private void Start()
+    private void OnEnable()
     {
         InvokeRepeating("SpawnNewEnemy", 0f, 2f);
     }
@@ -34,20 +34,20 @@ public class enemySpawner : MonoBehaviour
         switch (randomSpawnZone)
         {
             case 0:
-                randomXposition = Random.Range(-11f, -10f);
-                randomYposition = Random.Range(-8f, -8f);
+                randomXposition = Random.Range(-6f, -5f);
+                randomYposition = Random.Range(-4f, -4f);
                 break;
             case 1:
-                randomXposition = Random.Range(-11f, -10f);
-                randomYposition = Random.Range(-8f, 8f);
+                randomXposition = Random.Range(-6f, -5f);
+                randomYposition = Random.Range(-4f, 4f);
                 break;
             case 2:
-                randomXposition = Random.Range(10f, 11f);
-                randomYposition = Random.Range(-8f, -8f);
+                randomXposition = Random.Range(5f, 6f);
+                randomYposition = Random.Range(-4f, -4f);
                 break;
             case 3:
-                randomXposition = Random.Range(-10f, 10f);
-                randomYposition = Random.Range(7f, 8f);
+                randomXposition = Random.Range(-5f, 5f);
+                randomYposition = Random.Range(3f, 4f);
                 break;
         }
 
@@ -56,6 +56,11 @@ public class enemySpawner : MonoBehaviour
         newEnemy.GetComponent<AIDestinationSetter>().target = player; 
         rend = newEnemy.GetComponent<SpriteRenderer>();
         rend.color = new Color(Random.Range(0, 2), Random.Range(0, 2), Random.Range(0, 2), 1f);
+    }
+
+    private void OnDisable()
+    {
+        CancelInvoke("SpawnNewEnemy");
     }
 
     private void OnValidate()

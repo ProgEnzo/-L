@@ -32,10 +32,7 @@ public class EnnemySpawnerManager : MonoBehaviour
         {
             foreach (enemySpawner x in spawners)
             {
-                if (x.ID <= i)
-                    x.enabled = true;
-                else
-                    x.enabled = false;
+                x.gameObject.SetActive(x.ID<=i);
             }
         }
     }
