@@ -28,8 +28,11 @@ public class EnnemySpawnerManager : MonoBehaviour
 
     public void EnablingSpawners()
     {
+        Debug.LogWarning(SO_Controller.nombreDeFlammes);
         for (int i = 0; i < nbrFlammesPallier[SO_Controller.nombreDeFlammes]; i++)
         {
+            //if(PlayerController.instance.)
+                
             foreach (enemySpawner x in spawners)
             {
                 x.gameObject.SetActive(x.ID<=i);
