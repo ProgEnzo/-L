@@ -39,15 +39,24 @@ public class UiManager : MonoBehaviour
 			}
 		}
 
-		if (playerController.alive == false)
+		if (playerController != null)
 		{
-			showFinished();
+			if (playerController.alive == false)
+			{
+				showFinished();
+			}
 		}
+		
 	}
 
 	public void Reload()
 	{
 		Application.LoadLevel(Application.loadedLevel);
+	}
+
+	public void Quit()
+	{
+		Application.Quit();
 	}
 
 	public void pauseControl()

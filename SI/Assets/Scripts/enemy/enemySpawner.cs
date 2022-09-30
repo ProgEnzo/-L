@@ -53,9 +53,7 @@ public class enemySpawner : MonoBehaviour
 
         spawnPosition = new Vector3(transform.position.x + randomXposition, transform.position.y + randomYposition, 0f);
         newEnemy = Instantiate(enemy, spawnPosition, quaternion.identity);
-        newEnemy.GetComponent<AIDestinationSetter>().target = player; 
-        rend = newEnemy.GetComponent<SpriteRenderer>();
-        rend.color = new Color(Random.Range(0, 2), Random.Range(0, 2), Random.Range(0, 2), 1f);
+        newEnemy.GetComponent<AIDestinationSetter>().target = player;
     }
 
     private void OnDisable()

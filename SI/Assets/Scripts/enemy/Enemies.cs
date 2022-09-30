@@ -1,6 +1,7 @@
 using Pathfinding;
 using UnityEngine;
 using Random = UnityEngine.Random;
+using DG.Tweening;
 
 public class Enemies : MonoBehaviour
 {
@@ -25,11 +26,15 @@ public class Enemies : MonoBehaviour
     [SerializeField] private float dropRate;
     [SerializeField] private GameObject healingHeart;
 
+    public bool isFlashing;
+
     private void Start()
     {
         _timer = FindObjectOfType<timer>();
         float currentTime = _timer.currentTime;
         difficultyMultiplier += currentTime / 100;
+
+        isFlashing = false;
         
         int x = Random.Range(0, a_speed.Length);
         speed = a_speed[x];
@@ -65,6 +70,17 @@ public class Enemies : MonoBehaviour
         {
             gameObject.GetComponent<SpriteRenderer>().flipX = false;
         }
+        
+        if (isFlashing == false)
+        {
+            isFlashing = true;
+            myTween = rend.material.DOColor(Color.white, 0.2f).SetEase(Ease.InFlash, 2, 0).SetAutoKill(false).OnComplete(ResetFlash);
+        }
+
+        if (isFlashing == true)
+        {
+            myTween.Restart();
+        }
 
     }
 
@@ -72,6 +88,7 @@ public class Enemies : MonoBehaviour
     {
         Debug.Log(0);
         life -= t_damages;
+        isFlashing = true;
         if (life <= 0)
         {
             Death();
