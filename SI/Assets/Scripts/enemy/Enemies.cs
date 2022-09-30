@@ -1,3 +1,4 @@
+using System.Collections;
 using Pathfinding;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -8,6 +9,8 @@ public class Enemies : MonoBehaviour
     private float speed;
     public float life;
     public float damages;
+
+    public Material flash, normal;
 
     public float difficultyMultiplier = 1f;
     public float xp;
@@ -26,16 +29,12 @@ public class Enemies : MonoBehaviour
     [SerializeField] private float dropRate;
     [SerializeField] private GameObject healingHeart;
 
-    public bool isFlashing;
-
     private void Start()
     {
         _timer = FindObjectOfType<timer>();
         float currentTime = _timer.currentTime;
         difficultyMultiplier += currentTime / 100;
 
-        isFlashing = false;
-        
         int x = Random.Range(0, a_speed.Length);
         speed = a_speed[x];
         damages = a_damages[x];
@@ -70,17 +69,6 @@ public class Enemies : MonoBehaviour
         {
             gameObject.GetComponent<SpriteRenderer>().flipX = false;
         }
-        
-        //if (isFlashing == false)
-        {
-            isFlashing = true;
-            //myTween = rend.material.DOColor(Color.white, 0.2f).SetEase(Ease.InFlash, 2, 0).SetAutoKill(false).OnComplete(ResetFlash);
-        }
-
-        //if (isFlashing == true)
-        {
-            //myTween.Restart();
-        }
 
     }
 
@@ -88,11 +76,20 @@ public class Enemies : MonoBehaviour
     {
         Debug.Log(0);
         life -= t_damages;
-        isFlashing = true;
+
+        GetComponent<SpriteRenderer>().material = flash;
+        Invoke("ResetFlash", 0.15f);
+        
         if (life <= 0)
         {
             Death();
         }
+    }
+
+    void ResetFlash()
+    {
+        GetComponent<SpriteRenderer>().material = normal;
+
     }
     public void Death()
     {
