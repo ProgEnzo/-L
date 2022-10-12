@@ -6,10 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="49ef7511-bd59-4c2a-a3d8-30b89757746c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SI/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SI/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemy test.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemy test.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Manager/healthBar.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Manager/healthBar.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/enemy/Enemies.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/enemy/Enemies.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Bar/hellFireBar.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Bar/hellFireBar.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

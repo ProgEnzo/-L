@@ -22,7 +22,7 @@ public class UiManager : MonoBehaviour
 
 
 		hidePaused();
-		hideFinished();
+		//hideFinished();
 
 		if(Application.loadedLevelName == "SampleScene")
 			playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
@@ -98,12 +98,12 @@ public class UiManager : MonoBehaviour
 		}
 	}
 
-	public void hideFinished()
-	{
-		foreach(GameObject g in finishObjects){
-			g.SetActive(false);
-		}
-	}
+	// public void hideFinished()
+	// {
+	// 	foreach(GameObject g in finishObjects){
+	// 		g.SetActive(false);
+	// 	}
+	// }
 
 	public void LoadLevel(string level)
 	{
