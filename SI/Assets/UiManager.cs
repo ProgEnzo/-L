@@ -2,12 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using Unity.VisualScripting;
 
 public class UiManager : MonoBehaviour
 {
     GameObject[] pauseObjects;
 	GameObject[] finishObjects;
 	PlayerController playerController;
+
+	public EnnemySpawnerManager ResetSpawner;
+	
+	
 	void Start () 
 	{
 		Time.timeScale = 1;

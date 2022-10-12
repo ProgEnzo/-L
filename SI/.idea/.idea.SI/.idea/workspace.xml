@@ -40,6 +40,14 @@
   }
 }</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+    <configuration name="Standalone Player" type="RunUnityExe" factoryName="Unity Executable">
+      <option name="EXE_PATH" value="$PROJECT_DIR$/../../../Builds/SI/B1\SI.exe" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="C:\Users\e.ferreiradealmeida\Desktop\Builds\SI\B1" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <method v="2" />
+    </configuration>
     <configuration name="UnitTests (batch mode)" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2021.3.9f1\Editor\Unity.exe" />
       <option name="PROGRAM_PARAMETERS" value="-runTests -batchmode -projectPath C:\Users\e.ferreiradealmeida\Desktop\Si\-L\SI -testResults Logs/results.xml -testPlatform EditMode -debugCodeOptimization" />
@@ -58,10 +66,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="16080">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" />
+      <option name="pid" value="16080" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -84,7 +92,9 @@
       <workItem from="1664407999248" duration="4269000" />
       <workItem from="1664436857347" duration="13371000" />
       <workItem from="1664484357906" duration="4630000" />
-      <workItem from="1664523018647" duration="14329000" />
+      <workItem from="1664523018647" duration="16535000" />
+      <workItem from="1664907245540" duration="168000" />
+      <workItem from="1665560742405" duration="12630000" />
     </task>
     <servers />
   </component>

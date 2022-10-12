@@ -18,10 +18,10 @@ public class Enemies : MonoBehaviour
     [SerializeField] private timer _timer;
     
     private float[] a_speed = {3f, 5f, 7f};
-    private float[] a_life = {70f, 50f, 30f};
-    private float[] a_damages = {20f, 30f, 40f};
+    private float[] a_life = {12.5f, 9f, 5f};
+    private float[] a_damages = {15f, 10f, 5f};
     private float[] a_size = { 2.3f, 1.75f, 1f };
-    private float[] a_xp = { 15f, 10f, 5f };
+    private float[] a_xp = { 15f, 10f, 10f };
     
     [SerializeField] private Animator animator;
     private GameObject player;
@@ -33,7 +33,7 @@ public class Enemies : MonoBehaviour
     {
         _timer = FindObjectOfType<timer>();
         float currentTime = _timer.currentTime;
-        difficultyMultiplier += currentTime / 100;
+        difficultyMultiplier += currentTime*1.2f / 100;
 
         int x = Random.Range(0, a_speed.Length);
         speed = a_speed[x];
@@ -50,7 +50,7 @@ public class Enemies : MonoBehaviour
     }
     private void Update()
     {
-        Debug.Log("ptn d'anges");
+        Debug.Log(difficultyMultiplier);
 
         if (player.transform.position.y > transform.position.y)
         {

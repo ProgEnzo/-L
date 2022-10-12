@@ -27,7 +27,6 @@ public class Weapon : MonoBehaviour
 
     private void Start()
     {
-        level = 0;
         _directionShoot = GetComponentInParent<DirectionShoot>();
         damager = GetComponent<Damager>();
     }
@@ -45,6 +44,8 @@ public class Weapon : MonoBehaviour
 
     public virtual void LevelUp()
     {
+        
+        
         switch (tierUpgrade[level])
         {
             case TierEnum.weapon:
@@ -60,7 +61,7 @@ public class Weapon : MonoBehaviour
                 tierAngles++;
                 break;
         }
-
+        
         level++;
     }
 

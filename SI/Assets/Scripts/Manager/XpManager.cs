@@ -72,8 +72,7 @@ public class XpManager : MonoBehaviour
                 xpToNextLevel += addToEachLevel;
             }
         }
-        Debug.Log(currentXP / xpToNextLevel);
-        
+
     }
 
     public void FlagXP()

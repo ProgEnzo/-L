@@ -27,23 +27,23 @@ public class UpgradeManager : MonoBehaviour
 
     public void UpgradePartOne()
     {
-        if (_mitraillette.GetComponent<ProjectilesWeapon>().level <= 3)
+        if (_mitraillette.GetComponent<ProjectilesWeapon>().level <= 15)
         {
             list.Add(_mitraillette);
         }
-        if (_shotgun.GetComponent<ProjectilesWeapon>().level <= 6)
+        if (_shotgun.GetComponent<ProjectilesWeapon>().level <= 15)
         {
             list.Add(_shotgun);
         }
-        if (_missileLauncher.GetComponent<ProjectilesWeapon>().level <= 4)
+        if (_missileLauncher.GetComponent<ProjectilesWeapon>().level <= 15)
         {
             list.Add(_missileLauncher);
         }
-        if (_aoe.GetComponent<AOE>().level <= 4)
-        {
+        if (_aoe.GetComponent<AOE>().level <= 15)
+        { 
             list.Add(_aoe);
         }
-        if (_meteors.GetComponent<Meteors>().level <= 6)
+        if (_meteors.GetComponent<Meteors>().level <= 15)
         {
             list.Add(_meteors);
         }
@@ -65,27 +65,37 @@ public class UpgradeManager : MonoBehaviour
         bChoice = list[Random.Range(0,list.Count-1)];
         cChoice = list[Random.Range(0,list.Count-1)];
         
-        while (aChoice == bChoice || aChoice == cChoice || bChoice == cChoice)
-        {
-            while (aChoice == bChoice)
+        if (list.Count > 3)
+        { 
+            while (aChoice == bChoice || aChoice == cChoice || bChoice == cChoice)
             {
-                aChoice = list[Random.Range(0,list.Count)];
-            }
-            while (aChoice == cChoice)
-            {
-                aChoice = list[Random.Range(0,list.Count)];
-            }
-            while (bChoice == cChoice)
-            {
-                bChoice = list[Random.Range(0,list.Count)];
+                while (aChoice == bChoice)
+                {
+                    aChoice = list[Random.Range(0,list.Count-1)];
+                }
+                while (aChoice == cChoice)
+                {
+                    aChoice = list[Random.Range(0,list.Count-1)];
+                }
+                while (bChoice == cChoice)
+                {
+                    bChoice = list[Random.Range(0,list.Count-1)];
+                }
             }
         }
+        else
+        {
+            aChoice = list[0];
+            bChoice = list[1];
+            cChoice = list[2];
+        }
+       
 
         choices[0] = aChoice;
         choices[1] = bChoice;
         choices[2] = cChoice;
         
-        list.Clear();
+        //list.Clear();
 
         UpgradePartThree();
 
@@ -118,15 +128,15 @@ public class UpgradeManager : MonoBehaviour
         {
             if (weapons[i].GetComponent<ProjectilesWeapon>() != null)
             {
-                levels[i].text = $"{weapons[i].GetComponent<ProjectilesWeapon>().level + 1}";
+                levels[i].text = $"{weapons[i].GetComponent<ProjectilesWeapon>().level}";
             }
             else if (weapons[i].GetComponent<AOE>() != null)
             {
-                levels[i].text = $"{weapons[i].GetComponent<AOE>().level + 1}";
+                levels[i].text = $"{weapons[i].GetComponent<AOE>().level}";
             }
             else if (weapons[i].GetComponent<Meteors>() != null)
             {
-                levels[i].text = $"{weapons[i].GetComponent<Meteors>().level + 1}";
+                levels[i].text = $"{weapons[i].GetComponent<Meteors>().level}";
             }
         }
 

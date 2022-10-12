@@ -177,6 +177,7 @@ public class PlayerController : MonoBehaviour
         healthBar.UpdateHealthBar();
     }
 
+    [SerializeField] private XpManager _xpManager;
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (SO_Controller.GetFlag && other.CompareTag("Home"))
@@ -188,9 +189,10 @@ public class PlayerController : MonoBehaviour
             IncrementFlammes();
             
             FindObjectOfType<hellFireBar>().FlagIsCaptured();
-
-            if(flag)
-                Destroy(flag); 
+            
+            Destroy(flag); 
+            
+            _xpManager.FlagXP();
         }
         
     }

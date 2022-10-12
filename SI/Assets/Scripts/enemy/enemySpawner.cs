@@ -24,7 +24,7 @@ public class enemySpawner : MonoBehaviour
 
     private void OnEnable()
     {
-        InvokeRepeating("SpawnNewEnemy", 0f, 2f);
+        InvokeRepeating("SpawnNewEnemy", 0f, 4f);
     }
 
     private void SpawnNewEnemy()
@@ -34,20 +34,20 @@ public class enemySpawner : MonoBehaviour
         switch (randomSpawnZone)
         {
             case 0:
-                randomXposition = Random.Range(-6f, -5f);
-                randomYposition = Random.Range(-4f, -4f);
+                randomXposition = Random.Range(-3f, -2f);
+                randomYposition = Random.Range(-2f, -2f);
                 break;
             case 1:
-                randomXposition = Random.Range(-6f, -5f);
-                randomYposition = Random.Range(-4f, 4f);
+                randomXposition = Random.Range(-3f, -2f);
+                randomYposition = Random.Range(-2f, 2f);
                 break;
             case 2:
-                randomXposition = Random.Range(5f, 6f);
-                randomYposition = Random.Range(-4f, -4f);
+                randomXposition = Random.Range(2f, 3f);
+                randomYposition = Random.Range(-2f, -2f);
                 break;
             case 3:
-                randomXposition = Random.Range(-5f, 5f);
-                randomYposition = Random.Range(3f, 4f);
+                randomXposition = Random.Range(-2f, 2f);
+                randomYposition = Random.Range(2f, 2f);
                 break;
         }
 
