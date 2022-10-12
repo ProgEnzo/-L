@@ -109,12 +109,15 @@ public class UpgradeManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI[] levels;
     [SerializeField] private GameObject[] weapons;
 
+    [SerializeField] private Weapon weapon;
+    [SerializeField] private TextMeshProUGUI[] buffs;
+
     private void UpgradePartThree()
     {
         weapons[0] = aChoice;
         weapons[1] = bChoice;
         weapons[2] = cChoice;
-        
+
         for (int i = 0; i < buttons.Length; i++)
         {
             buttons[i].gameObject.SetActive(true);
@@ -140,6 +143,85 @@ public class UpgradeManager : MonoBehaviour
             }
         }
 
+        for (int i = 0; i < buffs.Length; i++)
+        {
+            if (weapons[i].GetComponent<ProjectilesWeapon>() != null)
+            {
+                int level = weapons[i].GetComponent<ProjectilesWeapon>().level;
+
+                if (weapons[i].GetComponent<Weapon>().tierUpgrade[level] == TierEnum.weapon)
+                {
+                    buffs[i].text = "Nouvelle arme";
+                }
+                else if (weapons[i].GetComponent<Weapon>().tierUpgrade[level] == TierEnum.damage)
+                {
+                    buffs[i].text = "Plus de dégâts";
+                }
+                else if (weapons[i].GetComponent<Weapon>().tierUpgrade[level] == TierEnum.angle)
+                {
+                    buffs[i].text = "Plus de projectiles";
+                }
+                else if (weapons[i].GetComponent<Weapon>().tierUpgrade[level] == TierEnum.cooldown)
+                {
+                    buffs[i].text = "Réduction du CD";
+                }
+                else if (weapons[i].GetComponent<Weapon>().tierUpgrade[level] == TierEnum.number)
+                {
+                    buffs[i].text = "Plus de projectiles";
+                }
+            }
+            else if (weapons[i].GetComponent<AOE>() != null)
+            {
+                int level = weapons[i].GetComponent<AOE>().level;
+
+                if (weapons[i].GetComponent<Weapon>().tierUpgrade[level] == TierEnum.weapon)
+                {
+                    buffs[i].text = "Nouvelle arme";
+                }
+                else if (weapons[i].GetComponent<Weapon>().tierUpgrade[level] == TierEnum.damage)
+                {
+                    buffs[i].text = "Plus de dégâts";
+                }
+                else if (weapons[i].GetComponent<Weapon>().tierUpgrade[level] == TierEnum.angle)
+                {
+                    buffs[i].text = "Plus de projectiles";
+                }
+                else if (weapons[i].GetComponent<Weapon>().tierUpgrade[level] == TierEnum.cooldown)
+                {
+                    buffs[i].text = "Réduction du CD";
+                }
+                else if (weapons[i].GetComponent<Weapon>().tierUpgrade[level] == TierEnum.number)
+                {
+                    buffs[i].text = "Plus de projectiles";
+                }
+            }
+            else if (weapons[i].GetComponent<Meteors>() != null)
+            {
+                int level = weapons[i].GetComponent<Meteors>().level;
+
+                if (weapons[i].GetComponent<Weapon>().tierUpgrade[level] == TierEnum.weapon)
+                {
+                    buffs[i].text = "Nouvelle arme";
+                }
+                else if (weapons[i].GetComponent<Weapon>().tierUpgrade[level] == TierEnum.damage)
+                {
+                    buffs[i].text = "Plus de dégâts";
+                }
+                else if (weapons[i].GetComponent<Weapon>().tierUpgrade[level] == TierEnum.angle)
+                {
+                    buffs[i].text = "Plus de projectiles";
+                }
+                else if (weapons[i].GetComponent<Weapon>().tierUpgrade[level] == TierEnum.cooldown)
+                {
+                    buffs[i].text = "Réduction du CD";
+                }
+                else if (weapons[i].GetComponent<Weapon>().tierUpgrade[level] == TierEnum.number)
+                {
+                    buffs[i].text = "Plus de projectiles";
+                }
+            }
+        }
+        
         Time.timeScale = 0f;
         Cursor.SetCursor(null, Vector2.zero, CursorMode.ForceSoftware);
     }

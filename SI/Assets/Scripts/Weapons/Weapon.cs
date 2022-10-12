@@ -23,7 +23,7 @@ public class Weapon : MonoBehaviour
 
     [Header("Level Up")]
     public int level;
-    [SerializeField] protected TierEnum[] tierUpgrade;
+    [SerializeField] public TierEnum[] tierUpgrade;
 
     private void Start()
     {
@@ -44,8 +44,6 @@ public class Weapon : MonoBehaviour
 
     public virtual void LevelUp()
     {
-        
-        
         switch (tierUpgrade[level])
         {
             case TierEnum.weapon:

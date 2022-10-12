@@ -1,8 +1,4 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using DG.Tweening;
-using UnityEngine.UI;
 using UnityEngine;
 using Image = UnityEngine.UI.Image;
 
