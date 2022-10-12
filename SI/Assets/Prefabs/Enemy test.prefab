@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4987576315021827547}
   - component: {fileID: 6968443938640992375}
   - component: {fileID: 95533297038351155}
-  m_Layer: 5
+  m_Layer: 12
   m_Name: HealthBarInner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -88,7 +88,7 @@ GameObject:
   - component: {fileID: 4275602067845173077}
   - component: {fileID: 7781040111027210134}
   - component: {fileID: 5547844801536570713}
-  m_Layer: 7
+  m_Layer: 12
   m_Name: HealthBarTest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -190,7 +190,7 @@ GameObject:
   - component: {fileID: 63735275108827553}
   - component: {fileID: 8935395728384681467}
   - component: {fileID: 8800564985175808537}
-  m_Layer: 5
+  m_Layer: 12
   m_Name: HealthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -385,7 +385,7 @@ GameObject:
   - component: {fileID: 5038263871277679049}
   - component: {fileID: 935672032}
   - component: {fileID: 172092784}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Enemy test
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -557,8 +557,8 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
+  m_Mass: 1000000
+  m_LinearDrag: 1028.03
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}

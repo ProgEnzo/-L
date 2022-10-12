@@ -24,7 +24,7 @@ public class enemySpawner : MonoBehaviour
 
     private void OnEnable()
     {
-        InvokeRepeating("SpawnNewEnemy", 0f, 4f);
+        InvokeRepeating("SpawnNewEnemy", 0f, 3.5f);
     }
 
     private void SpawnNewEnemy()

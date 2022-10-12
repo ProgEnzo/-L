@@ -24,7 +24,7 @@ public class PlayerController : MonoBehaviour
     public List<GameObject> Flammes;
 
     public GameObject flag;
-    
+
     #endregion
 
     #region Instance
@@ -53,7 +53,7 @@ public class PlayerController : MonoBehaviour
     {
         m_rigidbody.velocity = Vector2.zero;
     }
-
+    
     private void Start()
     {
         ReInit();
@@ -75,8 +75,12 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && m_timerDash < -0.5f)
         {
             m_timerDash = SO_Controller.m_durationDash;
-            GetComponent<BoxCollider2D>().enabled = false;
+            
+            rb = GetComponent<Rigidbody2D>();
+            Physics2D.IgnoreLayerCollision(7, 12, true);
+            /*box.GetComponent<BoxCollider2D>().enabled = false;*/
             StartCoroutine(EnableBox(0.5f));
+            
         }
         
         m_timerDash -= Time.deltaTime;
@@ -117,7 +121,8 @@ public class PlayerController : MonoBehaviour
     IEnumerator EnableBox(float waitTime)
     {
         yield return new WaitForSeconds(waitTime);
-        GetComponent<BoxCollider2D>().enabled = true;
+        //GetComponentInChildren<BoxCollider2D>().enabled = true;
+        Physics2D.IgnoreLayerCollision(7, 12, false);
     }
 
     public void FixedUpdate()
@@ -135,7 +140,7 @@ public class PlayerController : MonoBehaviour
         x.EnablingSpawners();
     }
 
-    private void ManageMove()
+    public void ManageMove()
     {
         var speed = m_timerDash <= 0 ? SO_Controller.m_speed : SO_Controller.m_dashSpeed;
 
