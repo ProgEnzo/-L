@@ -12,6 +12,9 @@ public class SO_Controller : ScriptableObject
     public float dragDeceleration = 12f;
     public float dragMultiplier = 12f;
 
+    [Header("Physics")] 
+    public BoxCollider2D boxCollision;
+
     [Header("TierSystem")] 
     public int tiers;
 

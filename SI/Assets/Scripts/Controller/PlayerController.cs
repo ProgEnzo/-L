@@ -75,6 +75,8 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && m_timerDash < -0.5f)
         {
             m_timerDash = SO_Controller.m_durationDash;
+            GetComponent<BoxCollider2D>().enabled = false;
+            StartCoroutine(EnableBox(0.5f));
         }
         
         m_timerDash -= Time.deltaTime;
@@ -110,6 +112,12 @@ public class PlayerController : MonoBehaviour
         {
             gameObject.GetComponent<SpriteRenderer>().flipX = false;
         }
+    }
+
+    IEnumerator EnableBox(float waitTime)
+    {
+        yield return new WaitForSeconds(waitTime);
+        GetComponent<BoxCollider2D>().enabled = true;
     }
 
     public void FixedUpdate()

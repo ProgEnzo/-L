@@ -451,6 +451,8 @@ MonoBehaviour:
   flag: {fileID: 0}
   rb: {fileID: 2871587935976452066}
   animator: {fileID: 2107972688}
+  _xpManager: {fileID: 0}
+  GC: {fileID: 0}
 --- !u!50 &2871587935976452066
 Rigidbody2D:
   serializedVersion: 4
@@ -618,7 +620,7 @@ TrailRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Time: 0.3
   m_Parameters:
     serializedVersion: 3
