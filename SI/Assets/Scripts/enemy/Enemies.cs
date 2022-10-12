@@ -8,6 +8,7 @@ public class Enemies : MonoBehaviour
 {
     private float speed;
     public float life;
+    public float maxLife;
     public float damages;
 
     public Material flash, normal;
@@ -40,6 +41,7 @@ public class Enemies : MonoBehaviour
         damages = a_damages[x];
         xp = a_xp[x];
         life = a_life[x] * difficultyMultiplier;
+        maxLife = life;
         
         transform.localScale = Vector3.one * a_size[x];
 
@@ -84,6 +86,8 @@ public class Enemies : MonoBehaviour
         {
             Death();
         }
+        
+        gameObject.GetComponentInChildren<enemyHealthBar>().UpdateHealthBar();
     }
 
     void ResetFlash()
