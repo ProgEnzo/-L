@@ -12,10 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ef30f934580dfa45930081fe800b19b, type: 3}
   m_Name: SO_Controller
   m_EditorClassIdentifier: 
-  m_speed: 800
-  m_dashSpeed: 1500
-  m_durationDash: 0.35
-  dragDeceleration: 10
-  dragMultiplier: 10
+  m_speed: 1550
+  m_dashSpeed: 2500
+  m_durationDash: 0.5
+  dragDeceleration: 12
+  dragMultiplier: 12
+  boxCollision: {fileID: 0}
+  tiers: 0
   maxLife: 100
-  currentLife: 0.0010528621
+  currentLife: 100
