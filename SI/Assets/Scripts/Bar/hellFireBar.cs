@@ -7,11 +7,15 @@ public class hellFireBar : MonoBehaviour
     private Image timerBar;
     public float maxTime;
     private float timeLeft;
-    public GameObject TimesUp;
+    public GameObject timesUp;
+    public GameObject gameOverMenu;
+    public GameObject gameOverText;
     
     private void Start()
     {
-        TimesUp.SetActive(false);
+        timesUp.SetActive(false);
+        gameOverMenu.SetActive(false);
+        gameOverText.SetActive(true);
         timerBar = GetComponent<Image>();
         timeLeft = maxTime;
     }
@@ -27,7 +31,9 @@ public class hellFireBar : MonoBehaviour
         }
         else 
         {
-            TimesUp.SetActive(true);
+            timesUp.SetActive(true);
+            gameOverMenu.SetActive(true);
+            gameOverText.SetActive(false);
             Time.timeScale = 0;
         }
 
